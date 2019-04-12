@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ProXML:Company xmlns:ProXML="http://www.wrox.com/ProXML">
+  <ProXML:Name>Useless Products Corp.</ProXML:Name>
+  <ProXML:Address>
+    <ProXML:Street>Broadway</ProXML:Street>
+    <ProXML:City>New York</ProXML:City>\u0D0ASAX 2
+    <ProXML:Zip>10005</ProXML:Zip>
+    <ProXML:Country>USA</ProXML:Country>
+  </ProXML:Address>
+  <ProXML:Description>
+    This company manufactures useless products.
+  </ProXML:Description>
+  <ProXML:Employees>
+    <ProXML:Employee>
+      <ProXML:Name>Johnny Purtvein</ProXML:Name>
+      <ProXML:Position>CEO</ProXML:Position>
+    </ProXML:Employee>
+    <ProXML:Employee>
+      <ProXML:Name>Mathilde Hammerstein</ProXML:Name>
+      <ProXML:Position>Secretary</ProXML:Position>
+    </ProXML:Employee>
+  </ProXML:Employees>
+</ProXML:Company>
