@@ -1,0 +1,49 @@
+package exp.tables;
+
+
+/**
+ * Title:
+ * Description:
+ * Copyright:    Copyright (c)
+ * Company:
+ * @author
+ * @version 1.0
+ */
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.event.*;
+import javax.swing.*;
+import javax.swing.table.*;
+import java.util.*;
+
+
+
+
+
+public class SimpleTable extends JPanel {
+
+  public SimpleTable() {
+
+    setLayout(new BorderLayout());
+    Object[] header = {"SSSSSsssssssss","AAAAAAAAaaa"};
+    DefaultTableModel dtm = new DefaultTableModel(header, 0);
+    JTable table = new JTable(dtm);
+
+
+    JScrollPane sp = new JScrollPane(table);
+    sp.setPreferredSize(new Dimension(100,50));
+    sp.setViewportBorder(BorderFactory.createLoweredBevelBorder());
+
+    add(sp, BorderLayout.CENTER);
+
+  }
+  public static void main(String[] args) {
+    SimpleTable simpleTable1 = new SimpleTable();
+
+    JFrame f = new JFrame();
+    f.getContentPane().setLayout(new BorderLayout());
+    f.getContentPane().add(simpleTable1, BorderLayout.CENTER);
+    f.pack();
+    f.setVisible(true);
+  }
+}

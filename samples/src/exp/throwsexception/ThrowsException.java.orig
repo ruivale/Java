@@ -1,0 +1,33 @@
+package exp.throwsexception;
+
+/**
+ * <p>Title: </p>
+ * <p>Description: </p>
+ * <p>Copyright: Copyright (c) </p>
+ * <p>Company: </p>
+ * @author unascribed
+ * @version 1.0
+ */
+
+public class ThrowsException {
+
+  public ThrowsException() {
+
+  }
+
+    public Object pop() throws EmptyStackException {
+    Object obj;
+
+    if (size == 0)
+        throw new EmptyStackException();
+
+    obj = objectAt(size - 1);
+    setObjectAt(size - 1, null);
+    size--;
+    return obj;
+
+  }
+  public static void main(String[] args) {
+    ThrowsException throwsException1 = new ThrowsException();
+  }
+}
