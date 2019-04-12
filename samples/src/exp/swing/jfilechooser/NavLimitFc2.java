@@ -1,0 +1,235 @@
+package exp.swing.jfilechooser;
+
+import javax.swing.*;
+import javax.swing.filechooser.*;
+import java.awt.*;
+import java.io.*;
+import java.util.*;
+
+public class NavLimitFc2{
+  File limitedRoot;
+  File[] parents;
+  JFrame frame;
+  Container con;
+  JFileChooser jfc;
+  NavLimitedFsv2 nlf;
+  FileView oldFv;
+  int count = 0;
+  int parentStrata = 1;
+  int si;
+  JComboBox jcb;
+  ListCellRenderer oldRenderer;
+
+  public NavLimitFc2(File top){
+    limitedRoot = top;
+
+    frame = new JFrame("JFileChooser with limited navigation test - 2");
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    con = frame.getContentPane();
+
+    parents = getParents(limitedRoot);
+    parentStrata = parents.length;
+
+    jfc = new JFileChooser(limitedRoot);
+    jfc.setFileSystemView(nlf = new NavLimitedFsv2(limitedRoot, parents));
+    oldFv = jfc.getFileView();
+    jfc.setFileView(new LimitedFileView2(oldFv, limitedRoot, nlf));
+
+    hideNavigation(jfc.getComponents(), parentStrata);
+
+    con.add(jfc, BorderLayout.CENTER);
+    frame.pack();
+    frame.setVisible(true);
+  }
+
+  /* get parents hierarchy */
+  File[] getParents(File vroot){
+    File parent;
+    File[] pfs;
+    int n = 0;
+    String s = null;
+    String rf = null;
+
+    try{
+      File f = vroot.getCanonicalFile();
+      s = f.toString();
+      n = countSepChar(s);
+    }
+    catch (Exception e){
+      e.printStackTrace();
+    }
+
+    pfs = new File[n];
+    int p = 0;
+    for (int i = 0; i < pfs.length; ++i){
+      int q = s.indexOf(File.separatorChar, p);
+      if (q != -1){
+        if (i == 0){
+          ++q; // we shoud get [C:\] or [/] as system root
+        }
+        rf = s.substring(0, q);
+        if (i != 0){
+          ++q; // go beyond \ or /
+        }
+        p = q;
+      }
+      else{ // last iteration of this for loop
+        rf = s;
+      }
+      parent = new File(rf);
+      try{
+        pfs[i] = parent.getCanonicalFile();
+      }
+      catch (Exception e){
+        e.printStackTrace();
+      }
+    }
+    return pfs;
+  } // getParents()
+
+  int countSepChar(String fs){
+    int c = 0;
+    int p = 0;
+
+    while((p = fs.indexOf(File.separatorChar, p)) != -1){
+      ++c;
+      ++p; // next search start
+    }
+    return c;
+  }
+
+  // adapted from Michael's method of the same name
+  void hideNavigation(Component[] comp, final int ps){
+    for (int x = 0; x < comp.length; x++){
+      if (comp[x] instanceof JPanel){
+        hideNavigation(((JPanel)comp[x]).getComponents(), ps);
+      }
+      else if(comp[x] instanceof JComboBox && count == 0){
+        jcb = ((JComboBox)(comp[x]));
+        oldRenderer = jcb.getRenderer();
+        jcb.setRenderer(new ListCellRenderer(){
+          public Component getListCellRendererComponent(JList list,
+                                                        Object value,
+                                                        int index,
+                                                        boolean isSelected,
+                                                        boolean cellHasFocus){
+            si = list.getSelectedIndex();
+            if ((index == -1 && si >= ps) || !(index < ps)){
+              return oldRenderer.getListCellRendererComponent
+               (list, value, index, isSelected, cellHasFocus);
+            }
+            else{
+              return new JLabel(" "); // erase the parent item
+            }
+          }
+        });
+        ++count;
+      }
+    } // for( ... )
+  } // hideNavigation()
+
+  public static void main(String[] args){
+    String vroot = ".";
+    if (args.length > 0){
+      vroot = args[0];
+    }
+    Locale.setDefault(Locale.US);
+    new NavLimitFc2(new File(vroot));
+  }
+}
+
+class LimitedFileView2 extends FileView{
+  FileView old;
+  File root;
+  FileSystemView fsv;
+
+  public LimitedFileView2(FileView ofv, File vr, FileSystemView fv){
+    old = ofv;
+    root = vr;
+    fsv = fv;
+  }
+
+  public Boolean isTraversable(File f){
+    return fsv.isTraversable(f);
+  }
+} // we may need implementing other methods for future debug using
+  // those ctor args
+
+class NavLimitedFsv2 extends FileSystemView{
+  File root, parent, canonRoot;
+  File[] roots = new File[1];
+  ArrayList parentsList;
+  //ArrayList<File> parentsList;
+
+  public NavLimitedFsv2(File r, File[] prnts){
+    parentsList = new ArrayList(Arrays.asList(prnts));
+    root = r;
+    roots[0] = root;
+    try{
+      canonRoot = r.getCanonicalFile();
+      parent = canonRoot.getParentFile();
+    }
+    catch (Exception e){
+      e.printStackTrace();
+    }
+  }
+
+  public File createNewFolder(File containingDir) throws IOException{
+    return getFileSystemView().createNewFolder(containingDir);
+  }
+
+  public File getParentDirectory(File dir){
+    File d = null;
+
+    try{
+      if (parentsList.contains(dir.getCanonicalFile())){
+        d = canonRoot; // don't go to real parent
+      }
+      else{
+        d = super.getParentDirectory(dir);
+      }
+    }
+    catch (Exception e){
+      e.printStackTrace();
+    }
+    return d;
+  }
+
+  public Boolean isTraversable(File f){
+    Boolean b = null;
+
+    try{
+      if (parentsList.contains(f.getCanonicalFile())){
+        b = new Boolean(false); // disable for parents strata
+      }
+      else{
+        b = super.isTraversable(f);
+      }
+    }
+    catch (Exception e){
+      e.printStackTrace();
+    }
+      return b;
+  }
+
+  public File[] getRoots(){
+    return roots;
+  }
+
+  public boolean isRoot(File f){
+    boolean retval = false;
+
+    try{
+      if (f.getCanonicalFile().equals(canonRoot)){
+        retval = true;
+      }
+      else{
+        retval = false;
+      }
+    }
+    catch (Exception e){
+      e.printStackTrace();
+    }
+    return retval;
+  }
+} // class NavLimitedFsv
