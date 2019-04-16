@@ -3,7 +3,7 @@
  * Classname:  jdk8examples.bidi.Bidi
  * </p>
  *
- * <p>Copyright: Copyright (c) 2018 EFACEC SE
+ * <p>Copyright: Copyright (c) 2019 EFACEC SE
  * <br>
  * This software is the confidential and proprietary information of EFACEC SE.
  * You shall not disclose such Confidential Information and shall use it only in
@@ -11,7 +11,7 @@
  * </p>
  * <p>Company: EFACEC SE
  * <br>
- * Rua Eng.บ Frederico Ulrich - Apartado 3081
+ * Rua Eng.ยบ Frederico Ulrich - Apartado 3081
  * <br>
  * 4471-907 Moreira da Maia
  * <br>
