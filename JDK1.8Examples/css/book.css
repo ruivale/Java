@@ -1,0 +1,109 @@
+
+SDM {
+        Decoration : true;
+#        GraphLayout: "Grid";
+#        GraphLayout: "Hierarchical";
+}
+
+Decoration {
+        background : lightgray ;
+//        background : 135,206,255 ; // sky blue
+//        backgroundPattern : "url(data/images/usa.ivl)";
+}
+
+GraphLayout {
+        leftMargin              : 1.0;
+        topMargin               : 1.0;
+        rightMargin             : 1.0;
+        bottomMargin            : 1.0;
+
+        horizontalGridOffset    : 22.5;
+        verticalGridOffset      : 10.0;
+
+#        layoutMode              : ilog.views.graphlayout.grid.IlvGridLayout.TILE_TO_GRID_FIXED_WIDTH;
+        layoutMode              : ilog.views.graphlayout.grid.IlvGridLayout.TILE_TO_GRID_FIXED_HEIGHT;
+#        layoutMode              : ilog.views.graphlayout.grid.IlvGridLayout.TILE_TO_ROWS;
+#        layoutMode              : ilog.views.graphlayout.grid.IlvGridLayout.TILE_TO_COLUMNS;
+}
+
+
+node.Monitor {
+        class         : ilog.views.sdm.graphic.IlvGeneralNode ;
+        foreground    = white;
+        fillColor1    = white;
+        Anchor        : Center ;
+        icon          : @foto;
+        label         : @name ;
+        labelAlignment: Left ;
+        strokeWidth   : 1 ;
+        fillStyle     : SOLID_COLOR;
+        ToolTipText   : @name;
+        horizontalAutoResizeMode : EXPAND_OR_SHRINK;
+        verticalAutoResizeMode : EXPAND_OR_SHRINK;
+        horizontalAutoResizeMargin : 1;
+        verticalAutoResizeMargin : 1;
+
+        labelZoomable  	: true ;
+        maxLabelZoom   	: 1.75 ;
+        minLabelZoom   	: .25 ;
+
+}
+
+node.Videorecorder {
+        class         : ilog.views.sdm.graphic.IlvGeneralNode ;
+        foreground    = white;
+        fillColor1    = white;
+        Anchor        : Center ;
+        icon          : @foto;
+        label         : @name ;
+        labelAlignment: Left ;
+//        labelPosition : IlvDirection.Center;
+        strokeWidth   : 1 ;
+        fillStyle     : SOLID_COLOR;
+        ToolTipText   : @name;
+        horizontalAutoResizeMode : EXPAND_OR_SHRINK;
+        verticalAutoResizeMode : EXPAND_OR_SHRINK;
+        horizontalAutoResizeMargin : 1;
+        verticalAutoResizeMargin : 1;
+
+        labelZoomable  	: true ;
+        maxLabelZoom   	: 1.75 ;
+        minLabelZoom   	: .25 ;
+
+}
+
+
+
+
+node[type="background"] {
+        class         : ilog.views.sdm.graphic.IlvGeneralNode ;
+        foreground    = red;
+        shapeWidth    : 15 ;
+        shapeHeight   : 15 ;
+        fillColor1    : white ;
+//        label         : @name ;
+  //      labelAlignment: Center ;
+    //    labelColor    : blue;
+        shapeType     : "Rectangle" ;
+        strokeWidth   : 2 ;
+        fillStyle     : SOLID_COLOR;
+        icon          : @icon
+}
+
+
+
+
+
+
+
+node.Equi:selected {
+//        icon          : "../../PInt/images/icons/Static.gif";
+//        icon          : @foto;
+        foreground    = gray;
+}
+
+node.Equi[type="Monitor"]:selected {
+//        shapeType     : "Triangle" ;
+}
+
+

@@ -1,0 +1,54 @@
+
+SDM {
+        Decoration : true;
+//        Map : "images/usa.ivl"
+}
+
+Decoration {
+        background : 135,206,255 ; // sky blue
+}
+
+
+link{
+        class : "ilog.views.sdm.graphic.IlvGeneralLink";
+        background  = @color;
+        foreground  = @color;
+        lineWidth   = 10;
+        endCap      = CAP_ROUND;
+        lineJoin    = JOIN_ROUND;
+        borderWidth = 2;
+}
+
+node.station {
+        class             : ilog.views.sdm.graphic.IlvGeneralNode ;
+        foreground        = @color;
+        shapeWidth        : 15 ;
+        shapeHeight       : 15;
+        fillColor1        : white ;
+        Anchor            : TopLeft ;
+        label             : @name ;
+        labelAntialiasing :true;
+        labelAlignment    : Center ;
+        shapeType         : "Ellipse" ;
+        strokeWidth       : 2 ;
+        fillStyle         : SOLID_COLOR;
+}
+
+
+
+node.station:selected {
+        foreground    : gray;
+        fillColor1    : gray ;
+        fillColor2    : black ;
+        fillStyle     : SOLID_COLOR;
+}
+
+node.station[] {
+        foreground    : gray;
+        fillColor1    : gray ;
+        fillColor2    : black ;
+        fillStyle     : SOLID_COLOR;
+}
+
+
+

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE User SYSTEM "XmlDoUser.dtd">
+<User id="8927">
+  <Name>A. Monteiro</Name>
+  <Application id="3232" perm="w">
+    <Name>PIS</Name>
+    <Class>com.ent.PIS.pis</Class>
+    <GIMenu>
+      <Menu>
+        <Name>Ajuda</Name>
+        <MenuItem id="122">
+          <Name>Aplicação</Name>
+          <Class>com.ent.PIS.Help</Class>
+          <Method>applicationHelp</Method>
+       </MenuItem>
+      </Menu>
+      <Menu>
+        <Name>Ficheiros</Name>
+        <Menu>
+          <Name>Sair</Name>
+          <MenuItem id="192">
+            <Name>Sair da applicação</Name>
+            <Class>com.ent.PIS.pis</Class>
+            <Method>exit</Method>
+          </MenuItem>
+        </Menu>
+      </Menu>
+    </GIMenu>
+    <GIToolBar>
+      <ToolBar>
+        <ToolBarItem id="837283">
+            <Name>Sair da applicação</Name>
+            <Class>com.ent.PIS.pis</Class>
+            <Method>exit</Method>
+        </ToolBarItem>
+      </ToolBar>
+    </GIToolBar>
+  </Application>
+  <Application id="756" perm="r">
+    <Name>STV</Name>
+    <Class>com.ent.STV.stv</Class>
+    <GIMenu>
+      <Menu>
+        <Name>Ficheiro stv</Name>
+        <MenuItem id="1619">
+          <Name>Sair</Name>
+          <Class>com.ent.STV.stv</Class>
+          <Method>exit</Method>
+        </MenuItem>
+        <Menu>
+          <Name>Gravar</Name>
+          <MenuItem id="1112">
+            <Name>Gravar informação</Name>
+            <Class>com.ent.STV.stv</Class>
+            <Method>recInfo</Method>
+          </MenuItem>
+        </Menu>
+    </Menu>
+    </GIMenu>
+    <GIToolBar>
+      <ToolBar>
+        <ToolBarItem id="837283">
+            <Name>Sair da applicação</Name>
+            <Class>com.ent.STV.stv</Class>
+            <Method>exit</Method>
+        </ToolBarItem>
+      </ToolBar>
+    </GIToolBar>
+  </Application>
+</User>

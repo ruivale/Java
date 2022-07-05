@@ -1,0 +1,501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Articles</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script language="JavaScript" src="/display/common/javascript/global.js" type="text/JavaScript"></script><link href="/display/common/css/print.css" rel="stylesheet" type="text/css" /></head><body><div id="content"><h1 xmlns=""><a href="/index.aspx"><img src="/display/InformIT/images/header/informit_printer.png" alt="" align="right" style="margin-left: 24px;" border="0" /></a>Exploring JDK 7, Part 2: Translucent and Shaped Windows</h1><p xmlns="">By <a href="/authors/bio.aspx?a=38e79a1e-5358-4f08-bf60-ed3dd1614e0d">Jeff Friesen</a></p><p xmlns="">Date: May 27, 2010</p><p xmlns=""><a href="article.aspx?p=1592963">Return to the article</a></p><hr xmlns="" />Oracle’s release of JDK 7 is expected to occur this coming Fall. This new release will offer a suite of new features for you to learn. In Part 2 of this four-part series, Jeff Friesen focuses on JDK 7’s improved support for translucent and shaped windows.<hr xmlns="" /><p>Oracle&#8217;s release of JDK 7 is expected to occur this coming fall. This new release will offer a suite of new features for you to learn.</p>
+<p>This article, the second in a four-part series that introduces you to some of these features, focuses on JDK 7&#8217;s improved support for translucent and shaped windows.</p>
+<p>Java SE 6u10 (build 12) introduced <tt>com.sun.awt.AWTUtilities</tt> to support translucent and shaped windows. This temporary class was introduced because 6u10 wasn't a major Java SE release; no new Abstract Window Toolkit APIs could be added or existing APIs modified.</p>
+<p><tt>AWTUtilities</tt> doesn't exist in JDK 7. Instead, the necessary changes have been made to various AWT classes to support translucent and shaped windows. This article examines the AWT's three kinds of translucency support, and also examines its support for shaped windows.</p>
+<div class="sidebar">
+<p class="title"><strong>NOTE</strong></p>
+<p>I built and tested this article's code with JDK 7 Milestone 5. Windows XP SP3 was the underlying platform. You can download the code <a href="/content/images/art_friesen_exploringjdk2/elementLinks/code.zip">here</a>.</p>
+</div>
+
+<h2>Simple Translucency</h2>
+<p><em>Simple translucency</em> results in an evenly translucent window; all pixels have the same opacity value. The smaller this value, the more translucent the window until it becomes transparent; the larger this value, the less translucent the window until it becomes opaque.</p>
+<p>JDK 7 supports simple translucency by adding <tt>public void setOpacity(float opacity)</tt> and <tt>public float getOpacity()</tt> methods to the <tt>java.awt.Window</tt> class. The former method requires an opacity argument ranging from 0.0 (transparent) to 1.0 (opaque).</p>
+<p>Invoke <tt>setOpacity()</tt> to activate simple translucency for the window on which this method is invoked. Don't specify an argument that is less than 0.0 or greater than 1.0; otherwise, <tt>setOpacity()</tt> will throw <tt>IllegalArgumentException</tt>.</p>
+<p>The <tt>setOpacity()</tt> method also throws <tt>java.awt.IllegalComponentStateException</tt> if the window is in full-screen mode and the opacity is less than 1.0, and <tt>UnsupportedOperationException</tt> if simple translucency isn't supported and the opacity is less than 1.0.</p>
+<p>The <tt>java.awt.GraphicsDevice</tt> class provides a <tt>public Window getFullScreenWindow()</tt> method for determining if the window is in full-screen mode. This class also provides the following method for determining if the current graphics device supports simple translucency:</p>
+<pre>public boolean isWindowTranslucencySupported(GraphicsDevice.WindowTranslucency
+                                             translucencyKind)</pre>
+<p>The <tt>isWindowTranslucencySupported()</tt> method returns true if the kind of translucency specified by its argument is supported. For simple translucency, this argument must be <tt>GraphicsDevice.WindowTranslucency.TRANSLUCENT</tt>, as demonstrated below:</p>
+<pre>GraphicsEnvironment ge;
+ge = GraphicsEnvironment.getLocalGraphicsEnvironment ();
+if (!ge.getDefaultScreenDevice ().
+        isWindowTranslucencySupported (GraphicsDevice.WindowTranslucency.TRANSLUCENT))
+{
+    System.err.println ("simple translucency isn't supported");
+    return;
+}</pre>
+<p>I've created a <tt>STDemo</tt> application that demonstrates simple translucency. Use its user interface's (UI's) slider component to adjust its frame window opacity from opaque to transparent (at which point the window disappears). Listing 1 presents the application's source code.</p>
+<h4>Listing 1&#151;<tt>STDemo.java</tt></h4>
+<pre>// STDemo.java
+import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSlider;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+public class STDemo extends JFrame
+{
+   public STDemo ()
+   {
+      super ("Simple Translucency Demo");
+      setDefaultCloseOperation (EXIT_ON_CLOSE);
+      final JSlider slider = new JSlider (0, 100, 100);
+      ChangeListener cl;
+      cl = new ChangeListener ()
+           {
+               public void stateChanged (ChangeEvent ce)
+               {
+                  JSlider source = (JSlider) ce.getSource ();
+                  STDemo.this.setOpacity (source.getValue ()/100.0f);
+               }
+           };
+      slider.addChangeListener (cl);
+      getContentPane ().setLayout (new FlowLayout ());
+      getContentPane ().add (new JLabel ("TRANSP"));
+      getContentPane ().add (new JPanel () {{ add (slider); }});
+      getContentPane ().add (new JLabel ("OPAQUE"));
+      getRootPane ().setDoubleBuffered (false);
+      pack ();
+      setVisible (true);
+   }
+   public static void main (String [] args)
+   {
+      Runnable r;
+      r = new Runnable ()
+          {
+              public void run ()
+              {
+                 GraphicsEnvironment ge;
+                 ge = GraphicsEnvironment.getLocalGraphicsEnvironment ();
+                 if (!ge.getDefaultScreenDevice ().
+                         isWindowTranslucencySupported
+                           (GraphicsDevice.WindowTranslucency.
+                                           TRANSLUCENT))
+                 {
+                     System.err.println ("simple translucency isn't "+
+                                         "supported");
+                     return;
+                 }
+                 new STDemo ();
+              }
+          };
+      EventQueue.invokeLater (r);
+   }
+}</pre>
+<p>Listing 1 creates a slider and registers a change listener with this component. While the slider control moves, this component fires change events to the listener, which responds by invoking <tt>setOpacity()</tt> with the slider's current value converted to [0.0, 1.0].</p>
+<p>The listing takes advantage of the <tt>new JPanel () {{ add (slider); }}</tt> shortcut to create a Swing panel and add the slider component to the panel. Essentially, this shortcut instantiates a subclass of <tt>JPanel</tt> and uses the subclass's instance initializer to add the slider.</p>
+<p>Swing's component double buffering yields an unexpected visual artifact where an opaque slider image is left behind when you drag the translucent frame window. Listing 1 disables double buffering, via <tt>getRootPane ().setDoubleBuffered (false);</tt>, to avoid this artifact.</p>
+<p>Compile Listing 1; then run <tt>STDemo</tt>. Adjusting the slider results in a translucent window and translucent slider (see <a href="/content/images/art_friesen_exploringjdk2/elementLinks/friesen_fig01.jpg">Figure
+1</a>). Don't release the mouse button once you reach transparent; otherwise, you won't be able to revert to translucent and opaque.</p>
+<div class="figure">
+	<a href="javascript:popUp('/content/images/art_friesen_exploringjdk2/elementLinks/friesen_fig01.jpg')">
+	<img src="/content/images/art_friesen_exploringjdk2/elementLinks/thfriesen_fig01.jpg" width="100" height="23"></a>
+	<p><a href="javascript:popUp('/content/images/art_friesen_exploringjdk2/elementLinks/friesen_fig01.jpg')">Figure 1</a> <em>The window and its contents are evenly translucent.</em></p>
+</div>
+
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>Per-Pixel Translucency
+</title><base >
+
+</head>
+<h2>Per-Pixel Translucency</h2>
+<p><em>Per-pixel translucency</em> lets you control the opacity of each window pixel, resulting in parts of a window being more translucent than other parts. (Per-pixel translucency can be used to make a window evenly translucent, but it consumes more resources than simple translucency.)</p>
+<p>JDK 7 supports per-pixel translucency by modifying <tt>Window</tt>'s <tt>public void setBackground(Color bgColor)</tt> method to detect its argument's alpha component. If alpha isn't 1.0 (window is opaque), the alpha of each pixel drawn on the window will be respected.</p>
+<div class="sidebar">
+<p class="title"><strong><em>Actual Translucency Level</em></strong></p>
+<p>The actual translucency value of a drawn pixel also depends upon the value passed to <tt>Window</tt>'s <tt>setOpacity()</tt> method, along with the window's current shape (discussed later in this article).</p>
+</div>
+<p>This method throws <tt>IllegalComponentStateException</tt> if the window is in full-screen mode and the background color's alpha is less than 1.0, and <tt>UnsupportedOperationException</tt> if per-pixel translucency isn't supported and alpha is less than 1.0.</p>
+<p>To avoid the latter exception, call <tt>GraphicsDevice</tt>'s <tt>isWindowTranslucencySupported()</tt> method with argument <tt>GraphicsDevice.WindowTranslucency.PERPIXEL_TRANSLUCENT</tt>, and check the return value, as follows: </p>
+<pre>GraphicsEnvironment ge;
+ge = GraphicsEnvironment.getLocalGraphicsEnvironment ();
+if (!ge.getDefaultScreenDevice ().
+        isWindowTranslucencySupported (GraphicsDevice.WindowTranslucency.PERPIXEL_TRANSLUCENT))
+{
+    System.err.println ("per-pixel translucency isn't supported");
+    return;
+}</pre>
+<p>It's also necessary to determine whether the window itself supports per-pixel translucency. Accomplish this task by invoking <tt>java.awt.GraphicsConfiguration</tt>'s <tt>public Boolean isTranslucencyCapable()</tt> method, which returns true if this is the case:</p>
+<pre>// The following code fragment continues from the previous code fragment, but assumes that
+// the current class is a descendent of java.awt.Window.
+if (!getGraphicsConfiguration ().isTranslucencyCapable ())
+{
+    System.err.println ("per-pixel translucency not in effect for this graphics configuration");
+    System.exit (0);
+}</pre>
+<p>If you want to determine the current background color alpha value, invoke <tt>Window</tt>'s <tt>public Color getBackground()</tt> method. Also, you can invoke the new <tt>public boolean isOpaque()</tt> method to find out if the window is opaque (true returns).</p>
+<p>I've created a <tt>PPTDemo</tt> application that demonstrates per-pixel translucency (see Listing 2). Because the window is undecorated, you'll need to click its (horizontally and vertically centered) close button to terminate the application.</p>
+<h4>Listing 2&#151;<tt>PPTDemo.java</tt></h4>
+<pre>// PPTDemo.java
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.GradientPaint;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+public class PPTDemo extends JFrame
+{
+   public PPTDemo ()
+   {
+      super ("Per-Pixel Translucency Demo");
+      JPanel gradPanel = new JPanel ()
+                         {
+                             // Transparent red
+                             Color colorA = new Color (255, 0, 0, 0);
+                             // Solid red
+                             Color colorB = new Color (255, 0, 0, 255);
+                             protected void paintComponent (Graphics g)
+                             {
+                                 Graphics2D g2d = (Graphics2D) g;
+                                 GradientPaint gp;
+                                 gp = new GradientPaint (0.0f, 0.0f, colorA,
+                                                         0.0f, getHeight (),
+                                                         colorB, true);
+                                 g2d.setPaint (gp);
+                                 g2d.fillRect (0, 0, getWidth (),
+                                               getHeight ());
+
+                             }
+                         };
+      gradPanel.setPreferredSize (new Dimension (300, 200));
+      gradPanel.setLayout (new BoxLayout (gradPanel, BoxLayout.Y_AXIS));
+      JButton btnClose = new JButton ("Close");
+      ActionListener al;
+      al = new ActionListener ()
+           {
+               public void actionPerformed (ActionEvent ae)
+               {
+                  System.exit (0);
+               }
+           };
+      btnClose.addActionListener (al);
+      btnClose.setAlignmentX (0.5f);
+      gradPanel.add (Box.createVerticalGlue ());
+      gradPanel.add (btnClose);
+      gradPanel.add (Box.createVerticalGlue ());
+      setContentPane (gradPanel);
+      if (!getGraphicsConfiguration ().isTranslucencyCapable ())
+      {
+          System.err.println ("per-pixel translucency not in effect for "+
+                              "this graphics configuration");
+          System.exit (0);
+      }
+      setBackground (new Color (0, 0, 0, 0)); // Achieve per-pixel
+                                              // translucency.
+      pack ();
+      setLocationRelativeTo (null);
+      setVisible (true);
+   }
+   public static void main (String [] args)
+   {
+      Runnable r;
+      r = new Runnable ()
+          {
+              public void run ()
+              {
+                 GraphicsEnvironment ge;
+                 ge = GraphicsEnvironment.getLocalGraphicsEnvironment ();
+                 if (!ge.getDefaultScreenDevice ().
+                         isWindowTranslucencySupported
+                           (GraphicsDevice.WindowTranslucency.
+                                           PERPIXEL_TRANSLUCENT))
+                 {
+                     System.err.println ("per-pixel translucency isn't "+
+                                         "supported");
+                     return;
+                 }
+                 new PPTDemo ();
+              }
+          };
+      EventQueue.invokeLater (r);
+   }
+}</pre>
+<p>Listing 2 presents a <tt>JPanel</tt> subclass that creates a pair of <tt>java.awt.Color</tt> objects with transparent (0) and opaque (255) alpha values. Its <tt>paintComponent()</tt> method works with <tt>java.awt.GradientPaint</tt> to paint a gradient of alpha values across the panel's surface.</p>
+<p>Later on, Listing 2 installs this panel as the frame window's content pane, verifies that the window's graphics configuration supports per-pixel translucency, undecorates the window, and invokes <tt>setBackground()</tt> to enable the per-pixel translucent window.</p>
+<p>After packing the panel to its preferred size, Listing 2 invokes <tt>setLocationRelativeTo(null)</tt> to center the panel on the screen. Following <tt>setVisible(true)</tt>, the translucent panel appears: transparent at the top, opaque at the bottom, and translucent in-between. See <a href="/content/images/art_friesen_exploringjdk2/elementLinks/friesen_fig02.jpg">Figure
+2</a>.</p>
+<div class="figure">
+	<a href="javascript:popUp('/content/images/art_friesen_exploringjdk2/elementLinks/friesen_fig02.jpg')">
+	<img src="/content/images/art_friesen_exploringjdk2/elementLinks/thfriesen_fig02.jpg" width="100" height="65"></a>
+	<p><a href="javascript:popUp('/content/images/art_friesen_exploringjdk2/elementLinks/friesen_fig02.jpg')">Figure 2</a> <em>The translucency decreases as the gradient moves toward the bottom of the window. The button remains opaque.</em></p>
+</div>
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>Per-Pixel Transparency and Shaped Windows
+</title><base >
+
+</head>
+<h2>Per-Pixel Transparency and Shaped Windows</h2>
+<p><em>Per-pixel transparency</em> is similar to per-pixel translucency, except for each window pixel's opacity being restricted to 0.0 (transparent) or 1.0 (opaque). This translucency mode is used in the context of shaped windows.</p>
+<p>A <em>shaped window</em> is an undecorated window whose appearance conforms to a specific shape (such as a circle or a rectangle with rounded corners). Pixels outside of the shape are transparent and reveal the background[md]clicking on these pixels achieves nothing.</p>
+<p>JDK 7 supports per-pixel transparency and shaped windows by adding <tt>public void setShape(Shape shape)</tt> and <tt>public Shape getShape()</tt> methods to <tt>Window</tt>. Pass a <tt>java.awt.Shape</tt> instance to the former method to give the current window a specific shape.</p>
+<p>The <tt>setShape()</tt> method throws <tt>IllegalComponentStateException</tt> if the window is in full-screen mode and a non-null shape is passed, and <tt>UnsupportedOperationException</tt> if per-pixel transparency isn't supported and a non-null shape is passed.</p>
+<p>To avoid the latter exception, call <tt>GraphicsDevice</tt>'s <tt>isWindowTranslucencySupported()</tt> method with argument <tt>GraphicsDevice.WindowTranslucency.PERPIXEL_TRANSPARENT</tt>, and check the return value, as follows:</p>
+<pre>GraphicsEnvironment ge;
+ge = GraphicsEnvironment.getLocalGraphicsEnvironment ();
+if (!ge.getDefaultScreenDevice ().
+        isWindowTranslucencySupported (GraphicsDevice.WindowTranslucency.PERPIXEL_TRANSPARENT))
+{
+    System.err.println ("per-pixel transparency isn't supported");
+    return;
+}</pre>
+<p>I've created a <tt>PPTSWDemo</tt> application that demonstrates per-pixel transparency and shaped windows by shaping Listing 2's rectangular gradient (without the gradient alpha values) into an ellipse. Listing 3 presents this application's source code.</p>
+<h4>Listing 3&#151;<tt>PPTSWDemo.java</tt></h4>
+<pre>// PPTSWDemo.java
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.GradientPaint;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.Shape;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.geom.Ellipse2D;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+public class PPTSWDemo extends JFrame
+{
+   public PPTSWDemo ()
+   {
+      super ("Per-Pixel Transparency and Shaped Window Demo");
+      setUndecorated (true); // Avoid decorated window artifacts.
+      JPanel gradPanel = new JPanel ()
+                         {
+                             // Solid white
+                             Color colorA = new Color (255, 255, 255);
+                             // Solid red
+                             Color colorB = new Color (255, 0, 0);
+                             protected void paintComponent (Graphics g)
+                             {
+                                 Graphics2D g2d = (Graphics2D) g;
+                                 GradientPaint gp;
+                                 gp = new GradientPaint (0.0f, 0.0f, colorA,
+                                                         0.0f, getHeight (),
+                                                         colorB, true);
+                                 g2d.setPaint (gp);
+                                 g2d.fillRect (0, 0, getWidth (),
+                                               getHeight ());
+
+                             }
+                         };
+      gradPanel.setPreferredSize (new Dimension (300, 200));
+      gradPanel.setLayout (new BoxLayout (gradPanel, BoxLayout.Y_AXIS));
+      JButton btnClose = new JButton ("Close");
+      ActionListener al;
+      al = new ActionListener ()
+           {
+               public void actionPerformed (ActionEvent ae)
+               {
+                  System.exit (0);
+               }
+           };
+      btnClose.addActionListener (al);
+      btnClose.setAlignmentX (0.5f);
+      gradPanel.add (Box.createVerticalGlue ());
+      gradPanel.add (btnClose);
+      gradPanel.add (Box.createVerticalGlue ());
+      setContentPane (gradPanel);
+      pack ();
+      setShape (new Ellipse2D.Float (0, 0, getWidth (), getHeight ()));
+      setLocationRelativeTo (null);
+      setVisible (true);
+   }
+   public static void main (String [] args)
+   {
+      Runnable r;
+      r = new Runnable ()
+          {
+              public void run ()
+              {
+                 GraphicsEnvironment ge;
+                 ge = GraphicsEnvironment.getLocalGraphicsEnvironment ();
+                 if (!ge.getDefaultScreenDevice ().
+                         isWindowTranslucencySupported
+                           (GraphicsDevice.WindowTranslucency.
+                                           PERPIXEL_TRANSPARENT))
+                 {
+                     System.err.println ("per-pixel transparency isn't "+
+                                         "supported");
+                     return;
+                 }
+                 new PPTSWDemo ();
+              }
+          };
+      EventQueue.invokeLater (r);
+   }
+}</pre>
+<p>Sometime after verifying per-pixel transparency support, Listing 3 executes <tt>setShape (new Ellipse2D.Float (0, 0, getWidth (), getHeight ()));</tt> to shape the frame window into an ellipse. The resulting rounded window appears in <a href="/content/images/art_friesen_exploringjdk2/elementLinks/friesen_fig03.jpg">Figure
+3</a>.</p>
+<div class="figure">
+	<a href="javascript:popUp('/content/images/art_friesen_exploringjdk2/elementLinks/friesen_fig03.jpg')">
+	<img src="/content/images/art_friesen_exploringjdk2/elementLinks/thfriesen_fig03.jpg" width="100" height="65"></a>
+	<p><a href="javascript:popUp('/content/images/art_friesen_exploringjdk2/elementLinks/friesen_fig03.jpg')">Figure 3</a> <em>The gradient is now constrained to appear within the ellipse's interior.</em></p>
+	</div>
+<p>Unfortunately, the shaped window has jagged edges. Perhaps the final release of JDK 7 will solve this problem by using per-pixel translucency and antialiasing. Or maybe it's possible to employ the idea presented in Chris Campbell's <a href="http://weblogs.java.net/blog/campbell/archive/2006/07/java_2d_tricker.html">Java 2D Trickery: Soft Clipping</a> blog post.</p>
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>Combining Translucency with Per-Pixel Transparency and Shaped Windows
+</title><base >
+
+</head>
+<h2>Combining Translucency with Per-Pixel Transparency and Shaped
+Windows</h2>
+<p>You can combine per-pixel (or even simple) translucency with per-pixel transparency to achieve a translucent shaped window. For proof, check out Listing 4, whose <tt>CTSWDemo</tt> application source code extends the previous application to also include per-pixel translucency.</p>
+<h4>Listing 4&#151;<tt>CTSWDemo.java</tt></h4>
+<pre>// CTSWDemo.java
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.GradientPaint;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.Shape;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.geom.Ellipse2D;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+public class CTSWDemo extends JFrame
+{
+   public CTSWDemo ()
+   {
+      super ("Combined Translucency with Per-Pixel Transparency and Shaped "+
+             "Window Demo");
+      setUndecorated (true); // Avoid decorated window artifacts.
+      JPanel gradPanel = new JPanel ()
+                         {
+                             Color colorA = new Color (255, 0, 0, 0);
+                             Color colorB = new Color (255, 0, 0, 255);
+                             protected void paintComponent (Graphics g)
+                             {
+                                 Graphics2D g2d = (Graphics2D) g;
+                                 GradientPaint gp;
+                                 gp = new GradientPaint (0.0f, 0.0f, colorA,
+                                                         0.0f, getHeight (),
+                                                         colorB, true);
+                                 g2d.setPaint (gp);
+                                 g2d.fillRect (0, 0, getWidth (),
+                                               getHeight ());
+
+                             }
+                         };
+      gradPanel.setPreferredSize (new Dimension (300, 200));
+      gradPanel.setLayout (new BoxLayout (gradPanel, BoxLayout.Y_AXIS));
+      JButton btnClose = new JButton ("Close");
+      ActionListener al;
+      al = new ActionListener ()
+           {
+               public void actionPerformed (ActionEvent ae)
+               {
+                  System.exit (0);
+               }
+           };
+      btnClose.addActionListener (al);
+      btnClose.setAlignmentX (0.5f);
+      gradPanel.add (Box.createVerticalGlue ());
+      gradPanel.add (btnClose);
+      gradPanel.add (Box.createVerticalGlue ());
+      setContentPane (gradPanel);
+      if (!getGraphicsConfiguration ().isTranslucencyCapable ())
+      {
+          System.err.println ("per-pixel translucency not in effect for this "+
+                              "graphics configuration");
+          System.exit (0);
+      }
+      setBackground (new Color (0, 0, 0, 0)); // Achieve per-pixel
+                                              // translucency.
+      pack ();
+      setShape (new Ellipse2D.Float (0, 0, getWidth (), getHeight ()));
+      setLocationRelativeTo (null);
+      setVisible (true);
+   }
+   public static void main (String [] args)
+   {
+      Runnable r;
+      r = new Runnable ()
+          {
+              public void run ()
+              {
+                 GraphicsEnvironment ge;
+                 ge = GraphicsEnvironment.getLocalGraphicsEnvironment ();
+                 if (!ge.getDefaultScreenDevice ().
+                         isWindowTranslucencySupported
+                           (GraphicsDevice.WindowTranslucency.
+                                           PERPIXEL_TRANSLUCENT))
+                 {
+                     System.err.println ("per-pixel translucency isn't "+
+                                         "supported");
+                     return;
+                 }
+                 if (!ge.getDefaultScreenDevice ().
+                         isWindowTranslucencySupported
+                           (GraphicsDevice.WindowTranslucency.
+                                           PERPIXEL_TRANSPARENT))
+                 {
+                     System.err.println ("per-pixel transparency isn't "+
+                                         "supported");
+                     return;
+                 }
+                 new CTSWDemo ();
+              }
+          };
+      EventQueue.invokeLater (r);
+   }
+}</pre>
+<p>Listing 4's panel gradient code once again employs alpha values when creating the pair of <tt>Color</tt> objects. As <a href="/content/images/art_friesen_exploringjdk2/elementLinks/friesen_fig04.jpg">Figure
+4</a> shows, however, the translucent red gradient now occupies an elliptical shape portion of the undecorated window instead of the entire window.</p>
+<div class="figure">
+	<a href="javascript:popUp('/content/images/art_friesen_exploringjdk2/elementLinks/friesen_fig04.jpg')">
+	<img src="/content/images/art_friesen_exploringjdk2/elementLinks/thfriesen_fig04.jpg" width="100" height="70"></a>
+	<p><a href="javascript:popUp('/content/images/art_friesen_exploringjdk2/elementLinks/friesen_fig04.jpg')">Figure 4</a> <em>The <tt>setBackground()</tt> method call allows the ellipse-shaped window's interior to be rendered with the gradient of red translucency.</em></p>
+</div>
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>Conclusion
+</title><base >
+
+</head>
+<h2>Conclusion</h2>
+<p>JDK 7&#8217;s support for translucent and shaped windows should facilitate the creation of sophisticated-looking UIs. Hopefully, this release will include soft clipping or some other technique for removing a shaped window&#8217;s jagged edges.</p>
+<p><a href="article.aspx?p=1592964">Part
+3</a> of this series focuses on JDK 7&#8217;s new JLayer Swing component, which is based upon JXLayer, a part of the <a href="http://swinglabs.org/projects.jsp">Swing Helper project from Swing Labs</a>.</p>
+
+
+
+
+<hr /><div id="footer"><p class="copyright">&copy; 2010 Pearson Education, Inc. All rights reserved.</p><p class="address">800 East 96th Street Indianapolis, Indiana 46240</p></div></div></body></html> 

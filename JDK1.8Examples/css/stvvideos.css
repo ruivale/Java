@@ -1,0 +1,28 @@
+SDM {
+        Decoration : true;
+}
+Decoration {
+        background : lightgray ;
+}
+node.Videorecorder {
+        class         : ilog.views.sdm.graphic.IlvGeneralNode ;
+        foreground    = white;
+        fillColor1    = white;
+        Anchor        : Center ;
+        icon          : @symbolSTV;
+        label         : @name ;
+        labelAlignment: Left ;
+        strokeWidth   : 1 ;
+        fillStyle     : SOLID_COLOR;
+        ToolTipText   : @name;
+        horizontalAutoResizeMode : EXPAND_OR_SHRINK;
+        verticalAutoResizeMode : EXPAND_OR_SHRINK;
+        horizontalAutoResizeMargin : 1;
+        verticalAutoResizeMargin : 1;
+
+        labelZoomable  	: true ;
+        maxLabelZoom   	: 1.75 ;
+        minLabelZoom   	: .25 ;
+}
+
+

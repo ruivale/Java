@@ -1,0 +1,44 @@
+package exp.threads;
+
+/**
+ * <p>Title: </p>
+ * <p>Description: </p>
+ * <p>Copyright: Copyright (c) </p>
+ * <p>Company: </p>
+ * @author unascribed
+ * @version 1.0
+ */
+
+public class SingleThread implements Runnable{
+
+  Thread t = new Thread(this, "this");
+
+  public SingleThread() {
+    t.start();
+
+          try {
+            System.out.println("Main thread sleeping!");
+            t.sleep(1000);
+          }catch(Exception e){
+            e.printStackTrace();
+          }
+
+
+
+  }
+
+  public void run(){
+    if (Thread.currentThread().getName().equals("this")) {
+          try {
+            System.out.println("Sleeping!");
+            t.sleep(5000);
+          }catch(Exception e){
+            e.printStackTrace();
+          }
+    }
+  }
+
+  public static void main(String[] args) {
+    SingleThread singleThread1 = new SingleThread();
+  }
+}

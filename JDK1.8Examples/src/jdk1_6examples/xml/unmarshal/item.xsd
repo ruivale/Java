@@ -1,0 +1,10 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="item" type="Item"/>
+    <xsd:complexType name="Item">
+        <xsd:sequence>
+            <xsd:element name="code" type="xsd:string"/>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="price" type="xsd:double"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

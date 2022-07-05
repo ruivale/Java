@@ -1,0 +1,40 @@
+package exp.timers;
+
+import javax.swing.*;
+import javax.swing.event.*;
+
+
+import java.awt.*;
+import java.awt.event.*;
+
+/**
+ * <p>Title: </p>
+ * <p>Description: </p>
+ * <p>Copyright: Copyright (c) </p>
+ * <p>Company: </p>
+ * @author unascribed
+ * @version 1.0
+ */
+
+public class TestTimers {
+
+  public TestTimers() {
+    javax.swing.Timer t = new javax.swing.Timer(1000, new Timer_ActionAdapter());
+    t.start();
+  }
+  public static void main(String[] args) {
+    TestTimers testTimers1 = new TestTimers();
+  }
+}
+class Timer_ActionAdapter
+    implements ActionListener{
+
+  public Timer_ActionAdapter() {
+
+  }
+
+  public void actionPerformed(ActionEvent e){
+    System.out.println("actionPerformed");
+  }
+
+}

@@ -1,0 +1,37 @@
+
+syntax = "proto3";
+
+package obtainrecs;
+
+
+
+message ObtainRecsRequest {
+    int32 trackId = 1;
+    int32 sourceId = 2;
+    string sourceUrl = 3;
+    int64 startTimeT = 4;
+    int64 endTimeT = 5;
+}
+
+message ObtainRecsResponse {
+    int32 trackId = 1;
+    int32 sourceId = 2;
+    string sourceUrl = 3;
+    int64 startTimeT = 4;
+    int64 endTimeT = 5;
+
+    int32 nvrId = 6;
+    string trackName = 7;
+    int32 trackSourceId = 8;
+    string trackSourceUrl = 9;
+
+    string sourceName = 10;
+}
+
+service ObtainRecsService {
+  
+  rpc obtainRecsServerStreaming(ObtainRecsRequest) returns (stream ObtainRecsResponse) {}
+  //rpc obtainRecsClientStreaming(stream ObtainRecsRequest) returns (ObtainRecsResponse) {}  
+  //rpc obtainRecsBidirectionalStreaming(stream ObtainRecsRequest) returns (stream ObtainRecsResponse) {}
+
+}

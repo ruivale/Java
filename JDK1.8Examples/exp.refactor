@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refactor PUBLIC "-//Borland Software Corporation//Refactor 1.0//EN" "http://www.borland.com/devsupport/jbuilder/dtds/refactor_1_0.dtd">
+
+<refactor>
+  <rename-package id="7AP01DVX92LEXODC1SXBCAN0" creation-time="Tue Mar 21 13:39:15.480 GMT 2006">
+    <old-package-name>exp.swing.optionpanes</old-package-name>
+    <new-package-name>exp.swing.joptionpanes</new-package-name>
+  </rename-package>
+  <rename-field id="7AP0IES5R2PEG7XRJSXBCAN0" creation-time="Fri Jun 30 17:20:07.787 BST 2006">
+    <declaring-class-name>exp.swing.borders.titledborder.checkbox.CompTitledPane</declaring-class-name>
+    <old-field-name>transmitter</old-field-name>
+    <declared-field-type>Lexp/swing/borders/titledborder/checkbox/StateChangingDescendant;</declared-field-type>
+    <new-field-name>descendant</new-field-name>
+  </rename-field>
+  <rename-class id="6AP0IES5R2PEG7XRJSXBCAN0" creation-time="Fri Jun 30 17:44:13.302 BST 2006">
+    <old-class-name>exp.swing.borders.titledborder.checkbox.CompTitledPane</old-class-name>
+    <new-class-name>exp.swing.borders.titledborder.checkbox.TitledBorderCompPane</new-class-name>
+  </rename-class>
+  <rename-class id="5AP0IES5R2PEG7XRJSXBCAN0" creation-time="Fri Jun 30 17:46:33.083 BST 2006">
+    <old-class-name>exp.swing.borders.titledborder.checkbox.CompTitledBorder</old-class-name>
+    <new-class-name>exp.swing.borders.titledborder.checkbox.TitledCompBorder</new-class-name>
+  </rename-class>
+</refactor>
+

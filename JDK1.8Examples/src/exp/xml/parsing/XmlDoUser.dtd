@@ -1,0 +1,70 @@
+<!-- Elementos relativos ao utilizador -->
+<!ELEMENT User (Name, Application*)>
+<!ELEMENT Application (Name,Class,GIMenu,GIToolBar)>
+
+<!-- Elementos relativos às aplicações -->
+<!ELEMENT GIMenu (Menu*)>
+<!ELEMENT Menu (Name,(MenuItem* | Menu*)*)>
+<!ELEMENT MenuItem (Name,Class,Method,Arg*)>
+<!ELEMENT GIToolBar (ToolBar)>
+<!ELEMENT ToolBar (ToolBarItem*)>
+<!ELEMENT ToolBarItem (Name,Class,Method,Arg*)>
+
+<!-- Elementos  relativos às operações -->
+<!ELEMENT GI (GITree)>
+<!ELEMENT GITree (Network)>
+<!ELEMENT Network (Node*)>
+<!ELEMENT Node (Name, X, Y, Width, Equipment*)>
+<!ELEMENT Equipment (Name, Properties*)>
+<!ELEMENT Eq_properties (Name, Class, Operation*)>
+<!ELEMENT Operation (Name, Method, Arg*)>
+
+<!-- Elementos gerais -->
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT X (#PCDATA)>
+<!ELEMENT Y (#PCDATA)>
+<!ELEMENT Width (#PCDATA)>
+<!ELEMENT Class (#PCDATA)>
+<!ELEMENT Method (#PCDATA)>
+<!ELEMENT Arg (#PCDATA)>
+
+<!-- Atributos relativos ao user -->
+<!ATTLIST User
+id CDATA #REQUIRED
+>
+<!-- Atributos relativos ás aplicações -->
+<!ATTLIST Application
+id CDATA #REQUIRED
+perm CDATA #REQUIRED
+>
+
+<!-- Atributos relativos aos menus das IGs -->
+<!ATTLIST MenuItem
+id CDATA #REQUIRED
+>
+<!ATTLIST Menu
+id CDATA #REQUIRED
+>
+
+<!-- Atributos relativos à barra de ferramentas das IGs -->
+<!ATTLIST ToolBarItem
+id CDATA #REQUIRED
+>
+
+<!-- Atributos relativos à árvore da rede das IGs -->
+<!ATTLIST Network
+id CDATA #REQUIRED
+>
+<!ATTLIST Node
+id CDATA #REQUIRED
+>
+<!ATTLIST Equipment
+id CDATA #REQUIRED
+>
+<!ATTLIST Properties
+id CDATA #REQUIRED
+>
+<!ATTLIST Operation
+id CDATA #REQUIRED
+perm CDATA #REQUIRED
+>

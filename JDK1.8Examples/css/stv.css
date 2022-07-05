@@ -1,0 +1,242 @@
+
+SDM {
+        Decoration    : true;
+
+//        LabelLayout   : true;
+
+        LinkLayout    : true;
+
+
+        HalfZooming    : true;
+
+//        GraphLayout: "Grid";
+//        Map: "url(usa.ivl)";
+}
+
+
+HalfZooming {
+//        enabled   : "true";
+
+        initialZoom : "1.0";
+        maxZoom : "1.75";
+        minZoom : "0.25";
+}
+
+
+LabelLayout {
+        enabled   : "true";
+}
+
+
+
+LinkLayout {
+        enabled   : "true";
+
+//        layoutMode  : "ilog.views.graphlayout.link.IlvLinkLayout.LONG_LINKS";
+        layoutMode  : "ilog.views.graphlayout.link.IlvLinkLayout.SHORT_LINKS";
+
+        preserveFixedLinks      : "true";
+
+        performingLayoutOnZoom  : "true";
+
+
+//        linkBundlesMode  : "ilog.views.graphlayout.link.shortlink.IlvShortLinkLayout.FIRST_LAST_SEGMENT";
+        linkBundlesMode  : "ilog.views.graphlayout.link.shortlink.IlvShortLinkLayout.NO_BUNDLE";
+
+        minFinalSegmentLength  : "1.0";
+
+        linkOffset  : "1.0";
+
+
+ //       linkClipInterface : com.ent.ilog.EntIlvLinkClipInterface; //IlvLinkClipInterface
+
+
+
+
+//        bypassDistance  : "5.0";
+
+
+//        globalLinkStyle : "ilog.views.graphlayout.link.IlvLinkLayout.LONG_LINKS";
+//        globalLinkStyle : "ilog.views.graphlayout.link.IlvLinkLayout.ORTHOGONAL_STYLE";
+        globalLinkStyle : "ilog.views.graphlayout.link.IlvLinkLayout.DIRECT_STYLE";
+//        globalLinkStyle : "ilog.views.graphlayout.link.IlvLinkLayout.MIXED_STYLE";
+//        globalLinkStyle : "ilog.views.graphlayout.link.IlvLinkLayout.NO_RESHAPE_STYLE";
+//        globalLinkStyle : "ilog.views.graphlayout.link.IlvLinkLayout.SHORT_LINKS";
+}
+
+
+
+
+Decoration {
+        background : lightgray ;
+//        backgroundFile : "url(ivl/network.ivl)";
+}
+
+
+
+
+GraphLayout {
+        leftMargin: 10;
+        topMargin:  10;
+        rightMargin:10;
+}
+
+
+
+link{
+        class : "ilog.views.sdm.graphic.IlvGeneralLink";
+        background  = @color;
+        foreground  = @color;
+        lineWidth   = 20;
+        endCap      = CAP_ROUND;
+//        borderWidth = 2;
+        maximumLineWidth : 15.0;
+
+//        lineJoin    = JOIN_ROUND;
+//        initialZoom : "1.0";
+  //      maxZoom : "1.5";
+    //    minZoom : "0.5";
+//        curved      = 0.65;
+}
+
+
+
+
+node.zone {
+}
+
+node.group_class {
+}
+
+node[type="background"] {
+        class         : ilog.views.sdm.graphic.IlvGeneralNode ;
+        foreground    = red;
+        shapeWidth    : 15 ;
+        shapeHeight   : 15 ;
+        fillColor1    : white ;
+//        label         : @name ;
+  //      labelAlignment: Center ;
+    //    labelColor    : blue;
+        shapeType     : "Rectangle" ;
+        strokeWidth   : 2 ;
+        fillStyle     : SOLID_COLOR;
+        icon          : @icon
+}
+
+
+
+
+node[type="station"] {
+        class         : ilog.views.sdm.graphic.IlvGeneralNode ;
+        foreground    = @color;
+        shapeWidth    : 30 ;
+        shapeHeight   : 30 ;
+        fillColor1    : white ;
+        Anchor        : TopLeft ;
+        shapeType     : "Ellipse" ;
+        strokeWidth   : 4 ;
+        fillStyle     : SOLID_COLOR;
+        label          	: @name;
+        labelAlignment 	: Center ;
+        labelColor     	: black ;
+        labelSpacing   	: 2 ;
+        lineSpacing    	: 0 ;
+        maxLabelZoom   	: 1.75 ;
+        minLabelZoom   	: .25 ;
+}
+
+
+
+// Station with no equips
+node[perm="0"] {
+        class         : ilog.views.sdm.graphic.IlvGeneralNode ;
+        foreground    = @color;
+        shapeWidth    : 30 ;
+        shapeHeight   : 30 ;
+        fillColor1    : gray ;
+        Anchor        : TopLeft ;
+        shapeType     : "Ellipse" ;
+        strokeWidth   : 4 ;
+        fillStyle     : SOLID_COLOR;
+
+        label          	: @name;
+        labelAlignment 	: Center ;
+        labelColor     	: black ;
+        labelSpacing   	: 2 ;
+        lineSpacing    	: 0 ;
+        maxLabelZoom   	: 1.75 ;
+        minLabelZoom   	: .25 ;
+}
+// Station not available
+node[perm="2"] {
+        class         : ilog.views.sdm.graphic.IlvGeneralNode ;
+        foreground    = @color;
+        shapeWidth    : 30 ;
+        shapeHeight   : 30 ;
+        fillColor1    : red ;
+        Anchor        : TopLeft ;
+        shapeType     : "Ellipse" ;
+        strokeWidth   : 4 ;
+        fillStyle     : SOLID_COLOR;
+        label          	: @name;
+        labelAlignment 	: Center ;
+        labelColor     	: black ;
+        labelSpacing   	: 2 ;
+        lineSpacing    	: 0 ;
+        maxLabelZoom   	: 1.75 ;
+        minLabelZoom   	: .25 ;
+}
+// Station with an equip in alarm
+node[perm="3"] {
+        class         : ilog.views.sdm.graphic.IlvGeneralNode ;
+        foreground    = @color;
+        shapeWidth    : 30 ;
+        shapeHeight   : 30 ;
+        fillColor1    : yellow ;
+        Anchor        : TopLeft ;
+        shapeType     : "Ellipse" ;
+        strokeWidth   : 4 ;
+        fillStyle     : SOLID_COLOR;
+        label          	: @name;
+        labelAlignment 	: Center ;
+        labelColor     	: black ;
+        labelSpacing   	: 2 ;
+        lineSpacing    	: 0 ;
+        maxLabelZoom   	: 1.75 ;
+        minLabelZoom   	: .25 ;
+}
+
+
+
+
+
+node[type="station"]:selected {
+        foreground    : white ;
+        fillColor1    : 25,100,250 ;
+        fillColor2    : black ;
+        fillStyle     : SOLID_COLOR ;
+}
+node[perm="0"]:selected {
+        foreground    = 25,100,250 ;
+        fillColor1    : gray ;
+        fillColor2    : black ;
+        fillStyle     : SOLID_COLOR ;
+}
+node[perm="2"]:selected {
+        foreground    = 25,100,250  ;
+        fillColor1    : red ;
+        fillColor2    : red ;
+        fillStyle     : SOLID_COLOR ;
+        strokeWidth   : 4 ;
+}
+node[perm="3"]:selected {
+        foreground    = 25,100,250  ;
+        fillColor1    : yellow ;
+        fillColor2    : yellow ;
+        fillStyle     : SOLID_COLOR ;
+}
+
+
+
+
+

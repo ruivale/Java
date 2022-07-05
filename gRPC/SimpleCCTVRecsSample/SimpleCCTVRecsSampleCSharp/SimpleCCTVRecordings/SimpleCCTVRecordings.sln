@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleCCTVRecordings", "SimpleCCTVRecordings.csproj", "{9F69AD19-7187-4850-A789-24D997159B33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCCTVRecordingsServer", "..\SimpleCCTVRecordingsServer\SimpleCCTVRecordingsServer.csproj", "{2732D232-34B0-4B5A-A93F-6B121C159C60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCCTVRecordingsClient", "..\SimpleCCTVRecordingsClient\SimpleCCTVRecordingsClient.csproj", "{8B15BF35-17F1-467F-8331-FF17A80FE1AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F69AD19-7187-4850-A789-24D997159B33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F69AD19-7187-4850-A789-24D997159B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F69AD19-7187-4850-A789-24D997159B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F69AD19-7187-4850-A789-24D997159B33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2732D232-34B0-4B5A-A93F-6B121C159C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2732D232-34B0-4B5A-A93F-6B121C159C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2732D232-34B0-4B5A-A93F-6B121C159C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2732D232-34B0-4B5A-A93F-6B121C159C60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B15BF35-17F1-467F-8331-FF17A80FE1AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B15BF35-17F1-467F-8331-FF17A80FE1AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B15BF35-17F1-467F-8331-FF17A80FE1AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B15BF35-17F1-467F-8331-FF17A80FE1AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C0F11D2-D59C-4AE5-901E-B9B81DADA303}
+	EndGlobalSection
+EndGlobal

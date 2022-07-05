@@ -1,0 +1,39 @@
+﻿
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.simplecctvrecs";
+option java_outer_classname = "SimpleCCTVRecordingsProto";
+option objc_class_prefix = "CCTVR";
+
+package simplecctvrecs;
+
+// The ObtainRecsService service definition.
+service ObtainRecsService {
+  // Sends a greeting
+  rpc ObtainRec (RecsRequest) returns (RecsReply) {}
+}
+
+// The request message containing the user's name.
+message RecsRequest {
+    int32 trackId = 1;
+    int32 sourceId = 2;
+    string sourceUrl = 3;
+    int64 startTimeT = 4;
+    int64 endTimeT = 5;
+}
+
+// The response message containing the greetings
+message RecsReply {
+    int32 trackId = 1;
+    int32 sourceId = 2;
+    string sourceUrl = 3;
+    int64 startTimeT = 4;
+    int64 endTimeT = 5;
+    int32 nvrId = 6;
+    string trackName = 7;
+    int32 trackSourceId = 8;
+    string trackSourceUrl = 9;
+    string sourceName = 10;
+}

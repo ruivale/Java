@@ -1,0 +1,67 @@
+
+SDM {
+        Decoration : true;
+}
+node[type="background"] {
+        class         : ilog.views.sdm.graphic.IlvGeneralNode ;
+        foreground    = red;
+        shapeWidth    : 15 ;
+        shapeHeight   : 15 ;
+        fillColor1    : white ;
+//        label         : @name ;
+  //      labelAlignment: Center ;
+    //    labelColor    : blue;
+        shapeType     : "Rectangle" ;
+        strokeWidth   : 2 ;
+        fillStyle     : SOLID_COLOR;
+        icon          : @icon
+}
+
+
+
+node.zone {
+}
+
+node.Camera {
+        class         : ilog.views.sdm.graphic.IlvGeneralNode ;
+        foreground    = @color;
+        shapeWidth    : 2 ;
+        shapeHeight   : 2;
+        fillColor1    : white ;
+        Anchor        : TopLeft ;
+        shapeType     : "Rectangle" ;
+        strokeWidth   : 2 ;
+        fillStyle     : SOLID_COLOR;
+        icon          : @symbolSTV
+
+        label          	: @name;
+        labelAlignment 	: Center ;
+        labelColor     	: black ;
+        labelSpacing   	: 2 ;
+        labelZoomable  	: true ;
+        lineSpacing    	: 0 ;
+        maxLabelZoom   	: 15 ;
+        minLabelZoom   	: .5 ;
+
+
+}
+
+
+node.Multiplexer {
+}
+
+
+node[source="true"] {
+        fillColor1    : red ;
+        fillStyle     : SOLID_COLOR;
+}
+node[source="true"]:selected {
+        fillColor1    : green ;
+        fillStyle     : SOLID_COLOR;
+}
+
+node.Camera:selected {
+        foreground    : gray;
+}
+
+
