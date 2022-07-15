@@ -22,7 +22,7 @@ import org.javacodegeeks.javalin.costumer.CostumerController;
  *        {"id":1,"name":"Tania Rogers","ssn":231872636}
  * 
  *
- * @author 2334
+ * @author 
  */
 public class JavalinExample {
 
