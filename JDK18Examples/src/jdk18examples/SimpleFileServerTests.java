@@ -18,7 +18,7 @@ public final class SimpleFileServerTests {
       server.start();
 
     } catch (Exception e) {
-      e.printStackTrace();;
+      e.printStackTrace();
     }
   }
 }
