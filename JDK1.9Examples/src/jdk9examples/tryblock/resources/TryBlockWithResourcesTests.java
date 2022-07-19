@@ -4,8 +4,12 @@ import java.net.Socket;
 
 
 /**
- *
- * @author 2334
+ * Effectively final variables in try-with-resources
+ *    The original try-with-resources requires that all managed variables be defined within the 
+ *    resource specification header (the parenthesized list after try). For some reason, this was 
+ *    considered by the Java team to be, at times, somewhat awkward. JDK 9 added the ability to 
+ *    define these variables before the try, if those variables are either explicitly or effectively 
+ *    final.
  */
 public class TryBlockWithResourcesTests {
 
