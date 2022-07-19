@@ -15,4 +15,6 @@
 /gRPC/SimpleCCTVRecsSample/SimpleCCTVRecsSampleJava/target/
 /gRPC/SimpleCCTVRecsSample/SimpleCCTVRecsSampleCSharp/SimpleCCTVRecordingsClient/obj/
 /gRPC/SimpleCCTVRecsSample/SimpleCCTVRecsSampleCSharp/SimpleCCTVRecordingsServer/obj/
+/gRPC/SimpleCCTVRecsSample/SimpleCCTVRecsSampleCSharp/SimpleCCTVRecordingsClient/obj/Debug/net5.0/SimpleCCTVRecordingsClient.GeneratedMSBuildEditorConfig.editorconfig
+/gRPC/SimpleCCTVRecsSample/SimpleCCTVRecsSampleCSharp/SimpleCCTVRecordingsServer/obj/Debug/net5.0/SimpleCCTVRecordingsServer.GeneratedMSBuildEditorConfig.editorconfig
 /JavalinRestApi/target/
