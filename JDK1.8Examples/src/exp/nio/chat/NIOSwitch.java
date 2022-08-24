@@ -25,7 +25,7 @@ import java.nio.channels.*;
  * default command line is java StreamSwitch -p5050 -i600
  * -p port to listen on
  * -i default idle time in seconds
- * user commands start with $ and consist of blank seperated arguments
+ * user commands start with $ and consist of blank separated arguments
  * other lines sent by the user are forwarded
  * $on nickname targets
  *    sign on as nickname, sending to targets
