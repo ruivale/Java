@@ -7,8 +7,9 @@ import java.net.*;
 
 import java.nio.*;
 import java.nio.channels.*;
-import java.nio.channels.spi.*;
 import java.nio.charset.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 import java.util.*;
 
@@ -71,7 +72,8 @@ public class Server {
     Selector       readSelector = Selector.open();
     ConnectionList connections  = new ConnectionList(readSelector);
     acceptor    = new AcceptThread(acceptSelector, connections, port);
-    responder   = new ReadWriteThread(readSelector, connections, baseDirectory);
+    responder   = new ReadWriteThread(readSelector, connections, baseDirectory);   
+    
   }
 
   //~ Methods //////////////////////////////////////////////////////////////////

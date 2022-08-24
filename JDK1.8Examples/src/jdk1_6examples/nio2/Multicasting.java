@@ -1,6 +1,5 @@
 package jdk1_6examples.nio2;
 
-import java.io.*;
 import java.net.*;
 import java.nio.channels.*;
 
@@ -88,7 +87,7 @@ import java.nio.channels.*;
  * @version 1.0
  */
 public class Multicasting {
-  public Multicasting() {
+  public Multicasting() throws Exception {
     /***
     NetworkInterface interf = NetworkInterface.getByName("eth0");
     InetAddress group = InetAddress.getByName("225.0.0.100");
