@@ -37,15 +37,18 @@
         </group>
         <group name="_current"/>
         <group name="IGsBranch1.3.x (INOSS GU)"/>
-        <group name="IGsTrunk (INOSS GUI)">
-            <file>file:/C:/OneDrive/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/_Experiences/exp/src/exp/_quiz/WeirdLoop.java</file>
-            <file>file:/C:/OneDrive/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/_Experiences/exp/src/exp/_quiz/SampleClasses.java</file>
-        </group>
         <group name="STV Server"/>
         <group name="EFARail">
             <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/_Experiences/exp/src/com/efacec/trp/efarail/efatoolbar/EFAToolbarSim.java</file>
             <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/_Experiences/exp/src/exp/runtime/runprocess/RunTestProcess.java</file>
         </group>
-        <group name="_Experiences"/>
+        <group name="_Experiences">
+            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/exp/Application1.java</file>
+        </group>
+        <group name="IGsTrunk (INOSS GUI)">
+            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/jdk8examples/optional/OptionalBooleanSimpleSample.java</file>
+            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/jdk8examples/optional/OptionalTests.java</file>
+            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/jdk8examples/optional/OptionalAndFunctions.java</file>
+        </group>
     </open-files>
 </project-private>
