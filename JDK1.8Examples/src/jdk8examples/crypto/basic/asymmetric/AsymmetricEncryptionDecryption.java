@@ -62,7 +62,7 @@ import javax.xml.bind.DatatypeConverter;
  *
  * @author rUI vALE - {rui dot vale at efacec dot com}
  *
- * @since __DATE__
+ * @since 2303
  */
 public class AsymmetricEncryptionDecryption {
 

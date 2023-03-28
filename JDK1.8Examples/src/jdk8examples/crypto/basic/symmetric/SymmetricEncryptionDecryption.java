@@ -72,7 +72,7 @@ import javax.crypto.spec.IvParameterSpec;
  *
  * @author rUI vALE - {rui dot vale at efacec dot com}
  *
- * @since __DATE__
+ * @since 2303
  */
 public class SymmetricEncryptionDecryption {
 
