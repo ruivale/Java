@@ -73,12 +73,12 @@ public class TimerTaskScheduling {
 
         then = System.currentTimeMillis();
 
-        timer.purge();
+        //timer.purge();
       }
     };
     /**/
     System.out.println("Thread.currentThread().toString()=" +Thread.currentThread().toString());
-    timer.schedule(timerTask, 100, 3000);
+    timer.scheduleAtFixedRate(timerTask, 100, 3000);
     System.out.println("Thread.currentThread().toString()=" +Thread.currentThread().toString());
 
   }

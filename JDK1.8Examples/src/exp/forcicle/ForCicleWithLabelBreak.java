@@ -45,13 +45,15 @@ public class ForCicleWithLabelBreak {
   public ForCicleWithLabelBreak(){
     int n = 6;
     
-    outer:
-    for (int i = 0; i < n; i++) {
-      System.out.println("\ti="+i);
-      inner:
+//outer:
+//    for (int i = 0; i < n; i++) {
+//      System.out.println("\ti="+i);
+
+inner:
       for (int j = 0; j < n; j++) {
         System.out.println("\tj="+j);
-        innest:
+
+innest:
         for (int k = 0; k < n; k++) {
           System.out.println("\t\tk="+k);
           
@@ -62,7 +64,7 @@ public class ForCicleWithLabelBreak {
           
         }        
       }
-    }
+//    }
     
   }
 

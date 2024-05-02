@@ -59,6 +59,38 @@ public class RobotDemo
     robot.delay(2000);
 
     robot.mouseRelease(InputEvent.BUTTON1_MASK);
+    
+    
+
+    
+      
+//    final int nSleep = 5555;
+//      
+//    try {
+//      final Dimension dimScreen = Toolkit. getDefaultToolkit(). getScreenSize();
+//      Point pointOnScreen;
+//      
+//      while (true) {
+//        pointOnScreen = MouseInfo.getPointerInfo().getLocation();
+//        pointOnScreen.setLocation(
+//            pointOnScreen.x > 0 ? pointOnScreen.x - 1 : 1, 
+//            pointOnScreen.y > 0 ? pointOnScreen.y - 1 : 1);
+//        robot.mouseMove(pointOnScreen.x, pointOnScreen.y);
+//        System.out.println(pointOnScreen);        
+//        Thread.sleep(nSleep);
+//        
+//        pointOnScreen = MouseInfo.getPointerInfo().getLocation();
+//        pointOnScreen.setLocation(
+//            pointOnScreen.x < dimScreen.width - 1 ? pointOnScreen.x + 1 : dimScreen.width - 2, 
+//            pointOnScreen.y < dimScreen.height - 1 ? pointOnScreen.y + 1 : dimScreen.height - 2);
+//        robot.mouseMove(pointOnScreen.x, pointOnScreen.y);       
+//        System.out.println(pointOnScreen);
+//        Thread.sleep(nSleep);
+//        
+//      }
+//    } catch (HeadlessException headlessException) {
+//    } catch (InterruptedException interruptedException) {
+//    }
   }
 
   public void actionPerformed(ActionEvent ae) {

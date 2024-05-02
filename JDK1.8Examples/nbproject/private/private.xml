@@ -42,13 +42,26 @@
             <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/_Experiences/exp/src/com/efacec/trp/efarail/efatoolbar/EFAToolbarSim.java</file>
             <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/_Experiences/exp/src/exp/runtime/runprocess/RunTestProcess.java</file>
         </group>
+        <group name="StvServer 2.2.0 x64">
+            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/jdk8examples/method/reference/User.java</file>
+            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/jdk8examples/method/reference/ConstructorRef.java</file>
+            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/exp/strings/StringsExamples.java</file>
+        </group>
+        <group name="IGsBranch1.5.x (INOSS GUI)">
+            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/exp/util/timer/JavaUtilTimerTests.java</file>
+            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/exp/util/timer/TimerTaskScheduling.java</file>
+        </group>
+        <group name="MdB">
+            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/exp/_quiz/KickOff.java</file>
+            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/exp/external/commands/ProcessExecutor.java</file>
+            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/exp/util/concurrency/ExecutorTests.java</file>
+            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/exp/util/timer/TimerTaskScheduling.java</file>
+        </group>
         <group name="_Experiences">
-            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/exp/Application1.java</file>
+            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/exp/robot/RobotMouseMoving.java</file>
         </group>
         <group name="IGsTrunk (INOSS GUI)">
-            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/jdk8examples/optional/OptionalBooleanSimpleSample.java</file>
-            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/jdk8examples/optional/OptionalTests.java</file>
-            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/jdk8examples/optional/OptionalAndFunctions.java</file>
+            <file>file:/C:/Users/2334/OneDrive%20-%20EFACEC%20Power%20Solutions,%20SGPS,%20SA/EFACEC/ID/Projects/GitHub/ruivale/Java/JDK1.8Examples/src/exp/robot/RobotMouseMoving.java</file>
         </group>
     </open-files>
 </project-private>

@@ -82,7 +82,7 @@ public class ShowUIDefaults
     Map components = new TreeMap();
 
     UIDefaults defaults = UIManager.getDefaults();
-
+    
     //  Build of Map of attributes for each component
 
     for (Enumeration enumeration = defaults.keys(); enumeration.hasMoreElements(); ) {

@@ -22,7 +22,13 @@ public class Panel4DocImgs extends JPanel {
   Object[] objZones = {"Superfície", "Intermédio 2","Intermédio 1", "Cais"};
   Object[] objEquips = {"Câmara 1","Câmara 2","Câmara 3","Câmara 4","Câmara 5","DVR","Quad","Sensor"};
   JList jListUsers = new JList(objUsers);
-  JList jListStations = new JList(objStations);
+  
+  
+  DefaultListModel<String> dlmStations = new DefaultListModel<>();
+  JList<String> jListStations = new JList(dlmStations);
+  
+  
+  
   JList jListEquips = new JList(objEquips);
   JList jListZones = new JList(objZones);
 
@@ -52,6 +58,18 @@ public class Panel4DocImgs extends JPanel {
 
   public Panel4DocImgs() {
     try {
+      dlmStations.addElement("Campanhã");
+      dlmStations.addElement("Sra. Hora");
+      dlmStations.addElement("Sete Bicas");
+      dlmStations.addElement("Correios");
+      dlmStations.addElement("Dinin");
+      dlmStations.addElement("Trindade");
+      dlmStations.addElement("Dei");
+      dlmStations.addElement("Tudo");
+      dlmStations.addElement("Cragão");
+      dlmStations.addElement("Gaia");
+      dlmStations.addElement("Coz");
+      
       jbInit();
     }
     catch(Exception e) {
