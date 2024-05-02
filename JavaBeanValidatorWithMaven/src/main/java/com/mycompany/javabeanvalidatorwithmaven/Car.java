@@ -1,39 +1,34 @@
 package com.mycompany.javabeanvalidatorwithmaven;
 
-
-
 import jakarta.validation.constraints.*;
 
-public class Car
-{
-    // ---------------|  Member fields  |----------------------------
-    @NotNull
-    private String manufacturer;
+public class Car {
+  // ---------------|  Member fields  |----------------------------
 
-    @NotNull
-    @Size ( min = 2, max = 14 )
-    private String licensePlate;
+  @NotNull
+  private String manufacturer;
 
-    @Min ( 2 )
-    private int seatCount;
+  @NotNull
+  @Size(min = 2, max = 14)
+  private String licensePlate;
 
-    // ---------------|  Constructors  |----------------------------
-    public Car ( String manufacturer , String licensePlate , int seatCount )
-    {
-        this.manufacturer = manufacturer;
-        this.licensePlate = licensePlate;
-        this.seatCount = seatCount;
-    }
+  @Min(2)
+  private int seatCount;
 
-    // ---------------|  Object overrides  |----------------------------
+  // ---------------|  Constructors  |----------------------------
+  public Car(String manufacturer, String licensePlate, int seatCount) {
+    this.manufacturer = manufacturer;
+    this.licensePlate = licensePlate;
+    this.seatCount = seatCount;
+  }
 
-    @Override
-    public String toString ( )
-    {
-        return "Car{ " +
-                "manufacturer='" + manufacturer + '\'' +
-                " | licensePlate='" + licensePlate + '\'' +
-                " | seatCount=" + seatCount +
-                " }";
-    }
+  // ---------------|  Object overrides  |----------------------------
+  @Override
+  public String toString() {
+    return "Car{ "
+      + "manufacturer='" + manufacturer + '\''
+      + " | licensePlate='" + licensePlate + '\''
+      + " | seatCount=" + seatCount
+      + " }";
+  }
 }

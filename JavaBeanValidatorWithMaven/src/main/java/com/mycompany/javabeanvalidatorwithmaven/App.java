@@ -18,7 +18,6 @@ public class App {
     ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
     Validator validator = factory.getValidator();
 
-
     System.out.println("");
     // No violations.
     {
@@ -30,7 +29,7 @@ public class App {
     }
 
     System.out.println("");
-    
+
     // 3 violations.
     {
       Car car = new Car(null, "X", 1);
