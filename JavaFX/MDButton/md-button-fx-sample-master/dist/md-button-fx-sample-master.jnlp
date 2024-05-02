@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="md-button-fx-sample-master.jnlp">
+  <information>
+    <title>md-button-fx-sample-master</title>
+    <vendor>2334</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="md-button-fx-sample-master.jar" size="5806" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="md-button-fx-sample-master" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="pl.plum.mdbuttontest.Main"  name="md-button-fx-sample-master" />
+  <update check="always"/>
+</jnlp>

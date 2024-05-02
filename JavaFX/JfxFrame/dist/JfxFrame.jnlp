@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JfxFrame.jnlp">
+  <information>
+    <title>JfxFrame</title>
+    <vendor>2334</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JfxFrame.jar" size="4305" download="eager" />
+    <jar href="lib\Ermine.jar" size="1086504" download="eager" />
+    <jar href="lib\junit-4.8.2.jar" size="237344" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="JfxFrame" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="jfxframe.JfxFrame"  name="JfxFrame" />
+  <update check="always"/>
+</jnlp>

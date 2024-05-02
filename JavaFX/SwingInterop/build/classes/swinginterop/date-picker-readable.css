@@ -1,0 +1,15 @@
+/*
+.day-name-cell {
+  -fx-padding: 10px ;
+  -fx-font-size: 0.716667em;
+  -fx-fit-to-width: true;
+  -fx-wrap-text: true;
+  -fx-text: "kol";
+}
+*/
+/* this works ...*/
+.day-name-cell {
+  -fx-padding: 10px ;
+  /*-fx-font-size: 0.716667em;*/
+}
+/**/

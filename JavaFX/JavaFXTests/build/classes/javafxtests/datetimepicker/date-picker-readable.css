@@ -1,0 +1,10 @@
+.date-picker {
+    -fx-font-size: 8pt;
+    -fx-font-weight: bold ;
+}
+.date-picker .day-name-cell {
+    -fx-padding: 7px ;
+}
+.day-name-cell {
+    -fx-font-size: 6pt;
+}

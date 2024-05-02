@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JavaFXTests.jnlp">
+  <information>
+    <title>JavaFXTests</title>
+    <vendor>2334</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" java-vm-args="-Djava.net.useSystemProxies=true -Dhttp.proxyHost=172.18.2.249 -Dhttp.proxyPort=8080 "  href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JavaFXTests.jar" size="130545" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="javafxtests.datetimepicker.DatePickerExample"  name="JavaFXTests" />
+  <update check="always"/>
+</jnlp>
