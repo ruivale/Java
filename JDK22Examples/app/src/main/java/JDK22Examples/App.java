@@ -5,7 +5,7 @@ package JDK22Examples;
 
 public class App {
     public String getGreeting() {
-        return "H e l l o    W o r l d!";
+        return "H e l l o    W o r l d!        H e l l o    W o r l d!";
     }
 
     public static void main(String[] args) {
