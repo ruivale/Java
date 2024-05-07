@@ -67,7 +67,7 @@ public class UnnamedVariablesAndPatterns {
     String name = "Rui Vale";
 
     if (name != null) {
-      System.out.println("\n\nIT SEAMS Netbeans DOES NOT YET CORRECTLY SUPPORT JDK22!\n\n");
+      System.out.println("\n\nIT SEEMS Netbeans DOES NOT YET CORRECTLY SUPPORT JDK22!\n\n");
 //      System.out.println("Hello, " + _ + "!"); // _ represents the unused variable
     }
 
