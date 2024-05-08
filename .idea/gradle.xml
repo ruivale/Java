@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/JDK21Examples" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/JDK21Examples" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/JDK22Examples" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/JDK22Examples" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/JavaFX/ChartApp" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/JavaFX/ChartApp" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/JavaFX/Griffon/Examples/GriffonExamples/GriffonExample" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/JavaFX/Griffon/Examples/GriffonExamples/GriffonExample" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/JavaFX/ImageApp" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/JavaFX/ImageApp" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/JavaFX/MDButton/md-button-fx-sample-master" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/JavaFX/MDButton/md-button-fx-sample-master" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+    <option name="parallelModelFetch" value="true" />
+  </component>
+</project>
