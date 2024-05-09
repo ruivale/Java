@@ -90,7 +90,7 @@ public class PatternMatchingForSwitch {
   
   
   public static void main(final String[] args){
-    System.out.println("PatternMatchingForSwitch PatternMatchingForSwitch PatternMatchingForSwitch");
+    System.out.println("\nPatternMatchingForSwitch PatternMatchingForSwitch PatternMatchingForSwitch");
     PatternMatchingForSwitch.oldOld();
     PatternMatchingForSwitch.newNew();
     System.out.println("-----------------------------------------------------------------------------------");     

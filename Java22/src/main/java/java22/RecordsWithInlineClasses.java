@@ -57,7 +57,7 @@ public class RecordsWithInlineClasses {
 
 
   public static void main(final String[] args){
-    System.out.println("RecordsWithInlineClasses RecordsWithInlineClasses RecordsWithInlineClasses ");
+    System.out.println("\nRecordsWithInlineClasses RecordsWithInlineClasses RecordsWithInlineClasses ");
     System.out.println("See JDK22Examples.recordswithinlineclasses classes");
     System.out.println("-----------------------------------------------------------------------------------");
   }

@@ -74,7 +74,7 @@ public class UnnamedVariablesAndPatterns {
   }
   
   public static void run() {    
-    System.out.println("UnnamedVariablesAndPatterns UnnamedVariablesAndPatterns UnnamedVariablesAndPatterns");
+    System.out.println("\nUnnamedVariablesAndPatterns UnnamedVariablesAndPatterns UnnamedVariablesAndPatterns");
     UnnamedVariablesAndPatterns.oldOld();
     UnnamedVariablesAndPatterns.newNew();
     System.out.println("-----------------------------------------------------------------------------------");
