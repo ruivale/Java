@@ -23,3 +23,5 @@
 /JavaFX/INOSS/CCTV/CCTVMonCamSelection/build/
 /JavaFX/INOSS/CCTV/CCTVMonCamSelection/dist/
 /JavaFX/Netbeans/NonModular/IDE/HelloFX/dist/
+/Java22/target/
+/gRPC/CctvGRpcSimple/target/

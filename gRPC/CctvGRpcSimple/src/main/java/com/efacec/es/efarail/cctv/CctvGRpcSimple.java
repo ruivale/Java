@@ -31,9 +31,10 @@
 package com.efacec.es.efarail.cctv;
 
 
+
 import com.efacec.es.trp.efarail.cctv.grpc.v1.Cctv;
 import com.efacec.es.trp.efarail.cctv.grpc.v1.Cctv.CctvVersion;
-import com.efacec.es.trp.efarail.cctv.grpc.v1.Cctv.ListCctvVersions;
+import com.efacec.es.trp.efarail.cctv.grpc.v1.Cctv.ListCctvVersionsResponse;
 import com.efacec.es.trp.efarail.cctv.grpc.v1.Cctv.VersionsRequest;
 import com.efacec.es.trp.efarail.cctv.grpc.v1.OperationGrpc;
 import com.google.protobuf.Int64Value;
@@ -92,13 +93,13 @@ public class CctvGRpcSimple {
       ws.toBuilder().setUserName(StringValue.of("inoss"));      
       
       // setting the request values...
-      versionsRequest.toBuilder().setWorkStationInfo(ws);
-      versionsRequest.toBuilder().setModule(Cctv.VersionMod.VERMOD_ALL);
+      versionsRequest.toBuilder().setWorkstationInfo(ws);
+      versionsRequest.toBuilder().setVersionMod(Cctv.VersionMod.VERMOD_ALL);
       
-      final ListCctvVersions versionReply = operBlockStub.getVersions(versionsRequest);
+      final ListCctvVersionsResponse versionReply = operBlockStub.getVersions(versionsRequest);
       
       
-      for(CctvVersion cctvVersion: versionReply.getVersionsList()){
+      for(CctvVersion cctvVersion: versionReply.getCctvVersionsList()){
         System.out.println("\n\nVersion: " + cctvVersion.getDesc() + "\n\n\n");
       }
       
