@@ -4,7 +4,10 @@ syntax = "proto3";
 package obtainrecs;
 
 option java_multiple_files = true;
-option java_package = "com.efacec.trp.inoss.cctv.recs.bosch.obtainrecs";
+
+// THE PATH SHOULD B NOT TO LONG OTHERWISE THE ABSOLUTE FILE PATHS CAN BECOME TO EXTENSIVE FOR THE SO TO DEAL WITH
+option java_package = "cctv.recs.bosch.obtainrecs";
+
 option java_outer_classname = "ObtainRecsProto";
 option objc_class_prefix = "RTG";
 

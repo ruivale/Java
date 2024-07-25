@@ -30,8 +30,11 @@
  */
 package com.efacec.trp.inoss.cctv.recs.bosch.obtainrecs;
 
-import com.efacec.trp.inoss.cctv.recs.bosch.obtainrecs.ObtainRecsServiceGrpc.ObtainRecsServiceBlockingStub;
-import com.efacec.trp.inoss.cctv.recs.bosch.obtainrecs.ObtainRecsServiceGrpc.ObtainRecsServiceStub;
+import cctv.recs.bosch.obtainrecs.ObtainRecsRequest;
+import cctv.recs.bosch.obtainrecs.ObtainRecsResponse;
+import cctv.recs.bosch.obtainrecs.ObtainRecsServiceGrpc;
+import cctv.recs.bosch.obtainrecs.ObtainRecsServiceGrpc.ObtainRecsServiceBlockingStub;
+import cctv.recs.bosch.obtainrecs.ObtainRecsServiceGrpc.ObtainRecsServiceStub;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;

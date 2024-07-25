@@ -30,7 +30,8 @@
 package com.efacec.trp.inoss.cctv.recs.bosch.obtainrecs;
 
 
-import java.util.logging.Level;
+import cctv.recs.bosch.obtainrecs.ObtainRecsRequest;
+import cctv.recs.bosch.obtainrecs.ObtainRecsResponse;
 import java.util.logging.Logger;
 
 

@@ -30,7 +30,9 @@
  */
 package com.efacec.trp.inoss.cctv.recs.bosch.obtainrecs;
 
-import com.efacec.trp.inoss.cctv.recs.bosch.obtainrecs.ObtainRecsServiceGrpc.ObtainRecsServiceImplBase;
+import cctv.recs.bosch.obtainrecs.ObtainRecsRequest;
+import cctv.recs.bosch.obtainrecs.ObtainRecsResponse;
+import cctv.recs.bosch.obtainrecs.ObtainRecsServiceGrpc.ObtainRecsServiceImplBase;
 import io.grpc.stub.StreamObserver;
 import java.util.Calendar;
 import java.util.logging.Logger;
