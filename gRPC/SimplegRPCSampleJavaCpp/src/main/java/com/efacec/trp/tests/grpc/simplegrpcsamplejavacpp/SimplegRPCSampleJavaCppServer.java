@@ -29,11 +29,11 @@
 
 package com.efacec.trp.tests.grpc.simplegrpcsamplejavacpp;
 
-import io.grpc.examples.helloworld.GreeterGrpc.GreeterImplBase;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.examples.helloworld.EmptyRequest;
 import io.grpc.examples.helloworld.GoodbyeReply;
+import io.grpc.examples.helloworld.GreeterGrpc.GreeterImplBase;
 import io.grpc.examples.helloworld.HelloReply;
 import io.grpc.examples.helloworld.HelloRequest;
 import io.grpc.stub.StreamObserver;
@@ -114,6 +114,7 @@ public class SimplegRPCSampleJavaCppServer extends GreeterImplBase {
     observer.onCompleted();
   }  
   
+
 
   
   public static void main(String[] args) throws IOException, InterruptedException {
