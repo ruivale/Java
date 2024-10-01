@@ -78,29 +78,40 @@ public class CctvGRpcSimple {
 
   
   public static void main(String[] args) {
+    
+    System.out.println("\n\n\tRunning Cctv gRPC simple client...");
+    
+    final int nPort = 5555;
+    final String strHost = 
+      //"172.17.29.93";
+      "localhost";
+    
     try {
       //https://localhost:7125
       //http://localhost:5003
-      final ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 5003).usePlaintext().build();
+      final ManagedChannel channel = ManagedChannelBuilder.forAddress(strHost, nPort).usePlaintext().build();
       
       final OperationGrpc.OperationBlockingStub operBlockStub = OperationGrpc.newBlockingStub(channel);
             
-      final VersionsRequest versionsRequest = VersionsRequest.getDefaultInstance();
-      
       // Creating the Workstation info...
-      final Cctv.WorkstationInformation ws = Cctv.WorkstationInformation.getDefaultInstance();
-      ws.toBuilder().setId(Int64Value.of(101));
-      ws.toBuilder().setUserName(StringValue.of("inoss"));      
+      final Cctv.WorkstationInformation ws = 
+          Cctv.WorkstationInformation.newBuilder()
+              .setId(Int64Value.of(102))
+              .setUserName(StringValue.of("inoss")).build();
       
       // setting the request values...
-      versionsRequest.toBuilder().setWorkstationInfo(ws);
-      versionsRequest.toBuilder().setVersionMod(Cctv.VersionMod.VERMOD_ALL);
+      final VersionsRequest versionsRequest = 
+          VersionsRequest.newBuilder()
+              .setWorkstationInfo(ws)
+              .setVersionMod(Cctv.VersionMod.VERMOD_ALL).build();
+      
       
       final ListCctvVersionsResponse versionReply = operBlockStub.getVersions(versionsRequest);
       
+      System.out.println("\t... received something from the server.\n");
       
       for(CctvVersion cctvVersion: versionReply.getCctvVersionsList()){
-        System.out.println("\n\nVersion: " + cctvVersion.getDesc() + "\n\n\n");
+        System.out.println("\t\tVersion: " + cctvVersion.getDesc());
       }
       
       channel.shutdown();
@@ -108,5 +119,7 @@ public class CctvGRpcSimple {
     } catch (Exception e) {
       e.printStackTrace();
     }
+    
+    System.out.println("\n\n");
   }
 }
