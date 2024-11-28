@@ -9,10 +9,14 @@
           "System.Runtime.CompilerServices.Unsafe": "4.5.2"
         },
         "compile": {
-          "lib/netstandard2.0/Google.Protobuf.dll": {}
+          "lib/netstandard2.0/Google.Protobuf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Google.Protobuf.dll": {}
+          "lib/netstandard2.0/Google.Protobuf.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Grpc/2.41.1": {
@@ -28,10 +32,14 @@
           "System.Memory": "4.5.3"
         },
         "compile": {
-          "lib/netstandard2.0/Grpc.Core.dll": {}
+          "lib/netstandard2.0/Grpc.Core.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Grpc.Core.dll": {}
+          "lib/netstandard2.0/Grpc.Core.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/linux-arm64/native/libgrpc_csharp_ext.arm64.so": {
@@ -62,10 +70,14 @@
           "System.Memory": "4.5.3"
         },
         "compile": {
-          "lib/netstandard2.0/Grpc.Core.Api.dll": {}
+          "lib/netstandard2.0/Grpc.Core.Api.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Grpc.Core.Api.dll": {}
+          "lib/netstandard2.0/Grpc.Core.Api.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Grpc.Net.Client/2.40.0": {
@@ -76,10 +88,14 @@
           "System.Diagnostics.DiagnosticSource": "4.5.1"
         },
         "compile": {
-          "lib/netstandard2.1/Grpc.Net.Client.dll": {}
+          "lib/netstandard2.1/Grpc.Net.Client.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/Grpc.Net.Client.dll": {}
+          "lib/netstandard2.1/Grpc.Net.Client.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Grpc.Net.Common/2.40.0": {
@@ -88,10 +104,14 @@
           "Grpc.Core.Api": "2.40.0"
         },
         "compile": {
-          "lib/netstandard2.1/Grpc.Net.Common.dll": {}
+          "lib/netstandard2.1/Grpc.Net.Common.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/Grpc.Net.Common.dll": {}
+          "lib/netstandard2.1/Grpc.Net.Common.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Grpc.Tools/2.41.1": {
@@ -104,19 +124,27 @@
       "Microsoft.Extensions.Logging.Abstractions/3.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Diagnostics.DiagnosticSource/4.5.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
+          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
+          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Memory/4.5.3": {
@@ -131,10 +159,14 @@
       "System.Runtime.CompilerServices.Unsafe/4.5.2": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
         }
       }
     }
@@ -417,11 +449,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\2334\\OneDrive - EFACEC Power Solutions, SGPS, SA\\EFACEC\\ID\\Projects\\_Experiences\\gRPC\\ObtainBoschNVRRecs\\ObtainBoschNVRRecsCSharp\\ObtainRecs\\ObtainRecs\\ObtainRecs.csproj",
+      "projectUniqueName": "C:\\Users\\2334\\OneDrive - EFACEC Power Solutions, SGPS, SA\\EFACEC\\ID\\Projects\\GitHub\\Private\\ruivale\\Java\\gRPC\\ObtainBoschNVRRecs\\ObtainBoschNVRRecsCSharp\\ObtainRecs\\ObtainRecs\\ObtainRecs.csproj",
       "projectName": "ObtainRecs",
-      "projectPath": "C:\\Users\\2334\\OneDrive - EFACEC Power Solutions, SGPS, SA\\EFACEC\\ID\\Projects\\_Experiences\\gRPC\\ObtainBoschNVRRecs\\ObtainBoschNVRRecsCSharp\\ObtainRecs\\ObtainRecs\\ObtainRecs.csproj",
+      "projectPath": "C:\\Users\\2334\\OneDrive - EFACEC Power Solutions, SGPS, SA\\EFACEC\\ID\\Projects\\GitHub\\Private\\ruivale\\Java\\gRPC\\ObtainBoschNVRRecs\\ObtainBoschNVRRecsCSharp\\ObtainRecs\\ObtainRecs\\ObtainRecs.csproj",
       "packagesPath": "C:\\Users\\2334\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\2334\\OneDrive - EFACEC Power Solutions, SGPS, SA\\EFACEC\\ID\\Projects\\_Experiences\\gRPC\\ObtainBoschNVRRecs\\ObtainBoschNVRRecsCSharp\\ObtainRecs\\ObtainRecs\\obj\\",
+      "outputPath": "C:\\Users\\2334\\OneDrive - EFACEC Power Solutions, SGPS, SA\\EFACEC\\ID\\Projects\\GitHub\\Private\\ruivale\\Java\\gRPC\\ObtainBoschNVRRecs\\ObtainBoschNVRRecsCSharp\\ObtainRecs\\ObtainRecs\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\2334\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -432,7 +464,9 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/EFACEC-TRP/52a54f65-f654-4b8e-af8f-d3c843c886dd/_packaging/ERAS/nuget/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
@@ -444,6 +478,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -475,16 +514,35 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.10, 3.1.10]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.32, 3.1.32]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

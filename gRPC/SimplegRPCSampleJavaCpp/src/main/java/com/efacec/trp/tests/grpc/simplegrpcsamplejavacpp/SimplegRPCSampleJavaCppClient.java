@@ -15,7 +15,8 @@ import java.time.Duration;
 import java.time.Instant;
 
 /**
- *
+ * Client to t
+ * 
  * @author 2334
  */
 public class SimplegRPCSampleJavaCppClient {
@@ -35,7 +36,6 @@ public class SimplegRPCSampleJavaCppClient {
     try {
       final ManagedChannel channel = 
           ManagedChannelBuilder.forAddress(STR_ADD_CPP, PORT)
-          //ManagedChannelBuilder.forAddress(STR_ADD_JAVA, PORT)
               .usePlaintext()
               .build();
             

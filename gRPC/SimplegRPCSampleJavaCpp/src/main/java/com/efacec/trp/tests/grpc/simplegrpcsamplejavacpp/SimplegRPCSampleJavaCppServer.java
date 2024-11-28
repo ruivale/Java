@@ -99,7 +99,9 @@ public class SimplegRPCSampleJavaCppServer extends GreeterImplBase {
    */
   @Override
   public void sayHello(HelloRequest request, StreamObserver<HelloReply> observer) {
-    observer.onNext(HelloReply.newBuilder().setMessage("Hello, " + request.getName() + ". This is the Java gRPC service.").build());
+    observer.onNext(
+        HelloReply.newBuilder().setMessage(
+            "Hello, " + request.getName() + ". This is the Java gRPC service.").build());
     observer.onCompleted();
   }  
   

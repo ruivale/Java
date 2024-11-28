@@ -1,3 +1,5 @@
 is_global = true
 build_property.RootNamespace = ObtainRecs
-build_property.ProjectDir = C:\Users\2334\OneDrive - EFACEC Power Solutions, SGPS, SA\EFACEC\ID\Projects\_Experiences\gRPC\ObtainBoschNVRRecs\ObtainBoschNVRRecsCSharp\ObtainRecs\ObtainRecs\
+build_property.ProjectDir = C:\Users\2334\OneDrive - EFACEC Power Solutions, SGPS, SA\EFACEC\ID\Projects\GitHub\Private\ruivale\Java\gRPC\ObtainBoschNVRRecs\ObtainBoschNVRRecsCSharp\ObtainRecs\ObtainRecs\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

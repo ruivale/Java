@@ -78,5 +78,12 @@ public class CollectionToMapDemo {
     final Set<Book> booksSet
       = new HashSet<>(Arrays.stream(books).collect(Collectors.toSet()));
     out.println("SET->MAP:\n" + convertSetToMap(booksSet));
+    
+    
+    
+//    final String[] ss = {"hoje", "ante-ontem", "depois-de-amanhã", "ontem", "amanhã"};
+//    final List<String> lstS = Arrays.stream(ss).toList();
+//    
+    
   }
 }
