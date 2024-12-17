@@ -325,7 +325,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\2334\\.nuget\\packages\\": {}
+    "C:\\Users\\2334\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -336,8 +337,12 @@
       "packagesPath": "C:\\Users\\2334\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\2334\\OneDrive - EFACEC Power Solutions, SGPS, SA\\EFACEC\\ID\\Projects\\GitHub\\Private\\ruivale\\Java\\gRPC\\ObtainBoschNVRRecs\\ObtainBoschNVRRecsCSharp\\ObtainRecs\\ObtainRecsClient\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\2334\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -345,7 +350,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {},
         "https://pkgs.dev.azure.com/EFACEC-TRP/52a54f65-f654-4b8e-af8f-d3c843c886dd/_packaging/ERAS/nuget/v3/index.json": {}
       },
@@ -368,7 +372,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net5.0": {
@@ -407,7 +412,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

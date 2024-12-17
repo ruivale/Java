@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "Q9f9r9OMLS0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\2334\\OneDrive - EFACEC Power Solutions, SGPS, SA\\EFACEC\\ID\\Projects\\GitHub\\Private\\ruivale\\Java\\gRPC\\ObtainBoschNVRRecs\\ObtainBoschNVRRecsCSharp\\ObtainRecs\\ObtainRecsServer\\ObtainRecsServer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\2334\\.nuget\\packages\\google.protobuf\\3.19.1\\google.protobuf.3.19.1.nupkg.sha512",
+    "C:\\Users\\2334\\.nuget\\packages\\grpc\\2.41.1\\grpc.2.41.1.nupkg.sha512",
+    "C:\\Users\\2334\\.nuget\\packages\\grpc.core\\2.41.1\\grpc.core.2.41.1.nupkg.sha512",
+    "C:\\Users\\2334\\.nuget\\packages\\grpc.core.api\\2.41.1\\grpc.core.api.2.41.1.nupkg.sha512",
+    "C:\\Users\\2334\\.nuget\\packages\\grpc.net.client\\2.40.0\\grpc.net.client.2.40.0.nupkg.sha512",
+    "C:\\Users\\2334\\.nuget\\packages\\grpc.net.common\\2.40.0\\grpc.net.common.2.40.0.nupkg.sha512",
+    "C:\\Users\\2334\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.0.3\\microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
+    "C:\\Users\\2334\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\2334\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\2334\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\2334\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\2334\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
+  ],
+  "logs": []
+}

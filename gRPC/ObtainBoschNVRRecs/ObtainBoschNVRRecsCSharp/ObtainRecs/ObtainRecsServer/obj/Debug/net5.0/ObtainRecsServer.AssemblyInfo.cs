@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ObtainRecsServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d1f268c68c348681b0d1e61f08911901dfda1d0e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa0335baaba04412b9452a4a8fae3beb43e4e23a")]
 [assembly: System.Reflection.AssemblyProductAttribute("ObtainRecsServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ObtainRecsServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

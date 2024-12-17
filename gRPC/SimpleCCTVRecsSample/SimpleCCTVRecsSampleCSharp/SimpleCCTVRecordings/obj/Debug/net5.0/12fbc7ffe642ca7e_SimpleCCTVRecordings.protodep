@@ -1,0 +1,2 @@
+obj\Debug\net5.0\protos/SimpleCCTVRecordings.cs \
+obj\Debug\net5.0\protos/SimpleCCTVRecordingsGrpc.cs: protos/SimpleCCTVRecordings.proto

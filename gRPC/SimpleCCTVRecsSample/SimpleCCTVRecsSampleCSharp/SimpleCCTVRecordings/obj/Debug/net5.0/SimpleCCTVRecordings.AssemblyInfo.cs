@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SimpleCCTVRecordings")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34ba2430608c872f15a446dc0db4265b530e0c43")]
 [assembly: System.Reflection.AssemblyProductAttribute("SimpleCCTVRecordings")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SimpleCCTVRecordings")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

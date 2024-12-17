@@ -1,0 +1,2 @@
+obj\Debug\netcoreapp3.1\protos/ObtainRecs.cs \
+obj\Debug\netcoreapp3.1\protos/ObtainRecsGrpc.cs: protos/ObtainRecs.proto

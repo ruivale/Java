@@ -27,7 +27,7 @@
  * </p>
  */
 
-package exp.robot;
+package exp;
 
 
 import java.awt.Dimension;
@@ -47,7 +47,7 @@ import java.awt.Toolkit;
  *
  * @since __DATE__
  */
-public class RobotMouseMoving {
+public class Wandering {
 
   
   public static void main(final String[] args) throws Exception{
