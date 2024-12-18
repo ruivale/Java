@@ -11,4 +11,30 @@
         <exec.mainClass>pt.intro.java.CourseJavaInto</exec.mainClass>
     </properties>
     <name>CourseJavaIntro</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                
+                <configuration>
+                    <fork>true</fork>
+                    <source>23</source>
+                    <target>23</target>
+                    <compilerArgs>
+                        <arg>--enable-preview</arg>
+                        <arg>-Xlint:all</arg>
+                    </compilerArgs>
+                    <!--for unmappable characters in classes-->
+                    <encoding>UTF-8</encoding>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                </configuration>                
+                
+            </plugin>
+        </plugins>
+    </build>
+    
 </project>

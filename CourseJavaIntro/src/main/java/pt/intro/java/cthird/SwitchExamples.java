@@ -29,6 +29,8 @@
 
 package pt.intro.java.cthird;
 
+import java.util.Dictionary;
+
 
 /**
  * <p>
@@ -190,9 +192,8 @@ public class SwitchExamples {
    * 
    * @return 
    */
-  private int getLengthWeekDaysName() {
+  private int getLengthWeekDaysName(Day day) {
     int numLetters = 0;
-    Day day = Day.WEDNESDAY;
     
     switch (day) {
       case MONDAY, FRIDAY, SUNDAY ->
@@ -204,7 +205,7 @@ public class SwitchExamples {
       case WEDNESDAY ->
         numLetters = 9;
     };
-    
+
     return numLetters;
   }
   
@@ -228,7 +229,39 @@ public class SwitchExamples {
   }
   
   
+//  /**
+//   * If a selector expression is of type long, float, double, and boolean, then its case labels must 
+//   * have the same type as the selector expression or its corresponding boxed type.
+//   * 
+//   * If you change the case label 0f to 0, you would get the following compile-time error:
+//   *    error: constant label of type int is not compatible with switch selector type float
+//   * 
+//   * @param v 
+//   * 
+//   * Warning: primitive patterns are a preview feature and are disabled by default. 
+//   *          (use --enable-preview to enable primitive patterns)
+//   * 
+//   *          [preview] primitive patterns are a preview feature and may be removed in a future release.
+//   */
+//  private void whichFloat(float v) {
+//    switch (v) {
+//      case 0f ->
+//        System.out.println("Zero");
+//      case float x when x > 0f && x <= 10f ->
+//        System.out.println(x + " is between 1 and 10");
+//      case float x ->
+//        System.out.println(x + " is larger than 10");
+//    }
+//  }  
+  
+  
+  
+  
+  
+  
   public static void main(final String[] args){
     final SwitchExamples clazz = new SwitchExamples();
+    
+    System.out.println("\n\nclazz.getLengthWeekDaysName(): "+ clazz.getLengthWeekDaysName(Day.WEDNESDAY)+"\n\n");
   }
 }
