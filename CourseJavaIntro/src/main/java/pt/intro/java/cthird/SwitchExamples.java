@@ -262,6 +262,6 @@ public class SwitchExamples {
   public static void main(final String[] args){
     final SwitchExamples clazz = new SwitchExamples();
     
-    System.out.println("\n\nclazz.getLengthWeekDaysName(): "+ clazz.getLengthWeekDaysName(Day.WEDNESDAY)+"\n\n");
+    System.out.println("\n\n\nclazz.getLengthWeekDaysName(): "+ clazz.getLengthWeekDaysName(Day.WEDNESDAY)+"\n\n");
   }
 }
