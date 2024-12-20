@@ -63,6 +63,6 @@ package pt.intro.java.ininth;
 public class StringUtils {
 
   public static void main(final String[] args) {
-    final StringUtils clazz = new StringUtils();
+    //final StringUtils clazz = new StringUtils();
   }
 }
