@@ -2,14 +2,13 @@ package pt.intro.java.efifth;
 
 import java.util.Objects;
 
+
 /**
  * <p>
  * Description:
  * </p>
  *
  * @author rUI vALE - {ruivale at gmail dot com}
- *
- * @since 241213 (Friday ;-) )
  */
 public class Player implements Cloneable {
 

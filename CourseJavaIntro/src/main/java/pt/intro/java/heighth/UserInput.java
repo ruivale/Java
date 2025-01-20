@@ -1,7 +1,7 @@
 package pt.intro.java.heighth;
 
-
 import java.util.Scanner;
+
 
 /**
  * <p>

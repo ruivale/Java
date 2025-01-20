@@ -52,8 +52,6 @@ package pt.intro.java.efifth;
  * </p>
  *
  * @author rUI vALE - {ruivale at gmail dot com}
- *
- * @since 241213 (Friday ;-) )
  */
 public class EqualsCloneAndHashCode {
 

@@ -1,5 +1,6 @@
 package pt.intro.java.ininth;
 
+
 /**
  * <p>
  * Description: 
@@ -57,8 +58,6 @@ package pt.intro.java.ininth;
  * </p>
  *
  * @author rUI vALE - {ruivale at gmail dot com}
- *
- * @since 241213 (Friday ;-) )
  */
 public class StringUtils {
 

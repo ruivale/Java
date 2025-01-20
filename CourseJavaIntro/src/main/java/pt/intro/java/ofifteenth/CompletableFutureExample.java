@@ -8,6 +8,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
+
 /**
  * <p>
  * Description: 
@@ -54,6 +55,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class CompletableFutureExample {
 
+  
   /**
    * Executes a Future and waits for it termination.
    * 
@@ -61,7 +63,9 @@ public class CompletableFutureExample {
    * @throws ExecutionException 
    */
   private static void futureExample() throws InterruptedException, ExecutionException {
+    
     System.out.println("\nfutureExample:");
+    
     ExecutorService executor = Executors.newSingleThreadExecutor();
     
     Future<Integer> future = executor.submit(() -> {
@@ -70,28 +74,34 @@ public class CompletableFutureExample {
     });
 
     System.out.println("\nWainting for the Future to end...");
-    
     System.out.println(future.get() + "\n"); // Blocks until the result is available
+    
     executor.shutdown();
   }
 
+  
   /**
    * 
    */
   private static void completableFutureExample() {
+    
     System.out.println("\ncompletableFutureExample:");
+    
     CompletableFuture.supplyAsync(() -> {
       try {Thread.sleep(2000);} catch (InterruptedException interruptedException) {}
       return 42; // Simulating a computation
+      
     }).thenApply(result -> result * 2) // Transforming the result
       .thenAccept(System.out::println); // Printing the result
   }
 
+  
   /**
    * run multiple tasks and combine their results seamlessly
    */
   private static void combiningMultipleFuturesExample() {
     System.out.println("\ncombiningMultipleFuturesExample:");
+    
     CompletableFuture<Integer> task1 = CompletableFuture.supplyAsync(() -> 50);
     CompletableFuture<Integer> task2 = CompletableFuture.supplyAsync(() -> 70);
 
@@ -99,28 +109,35 @@ public class CompletableFutureExample {
       .thenAccept(result -> System.out.println("Sum: " + result));    
   }
 
+  
   /**
-   * cefully handle exceptions without crashing the application
+   * Handle exceptions without crashing the application
    */
   private static void handlingExceptionsExample() {
     System.out.println("\nhandlingExceptionsExample:");
+    
     CompletableFuture.supplyAsync(() -> {
       throw new RuntimeException("Error occurred");
+      
     }).exceptionally(ex -> {
       System.out.println("Handled Exception: " + ex.getMessage());
       return 0;
+      
     }).thenAccept(System.out::println);    
   }
 
+  
   /**
    * Avoid indefinitely waiting for a result
    */
   private static void timeoutHandlingExample() {
     System.out.println("\ntimeoutHandlingExample:");
+    
     CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() -> {
       try {Thread.sleep(5000);} catch (InterruptedException interruptedException) {}
       return 42;
     });
+    
     future.orTimeout(2, TimeUnit.SECONDS)
       .exceptionally(ex -> {
         System.out.println("Timeout occurred");

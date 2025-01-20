@@ -1,7 +1,6 @@
 package pt.intro.java.cthird;
 
 
-
 /**
  * <p>
  * Description: Java’s evolution continues to simplify common programming tasks, and one of the
