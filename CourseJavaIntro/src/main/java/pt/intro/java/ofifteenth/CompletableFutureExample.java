@@ -1,6 +1,5 @@
 package pt.intro.java.ofifteenth;
 
-import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -140,7 +139,7 @@ public class CompletableFutureExample {
     
     future.orTimeout(2, TimeUnit.SECONDS)
       .exceptionally(ex -> {
-        System.out.println("Timeout occurred");
+        System.out.println("Timeout occurred: " + ex.getMessage());
         return -1;
       })
       .thenAccept(System.out::println);
@@ -158,7 +157,6 @@ public class CompletableFutureExample {
     }
 
     try {
-
       System.out.println("\n\nCalling CompletableFuture...");
       CompletableFutureExample.completableFutureExample();
       System.out.println("... just called the CompletableFuture.\n\n");
