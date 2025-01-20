@@ -31,6 +31,8 @@ package exp;
 
 
 import java.awt.Dimension;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.awt.HeadlessException;
 import java.awt.MouseInfo;
 import java.awt.Point;
@@ -44,8 +46,6 @@ import java.awt.Toolkit;
  * </p>
  *
  * @author rUI vALE - {rui dot vale at efacec dot com}
- *
- * @since __DATE__
  */
 public class Wandering {
 
@@ -55,7 +55,11 @@ public class Wandering {
  
     try {
       final Robot robot = new Robot();
-      final Dimension dimScreen = Toolkit. getDefaultToolkit(). getScreenSize();
+      final GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+      final GraphicsDevice[] gdlist = ge.getScreenDevices();
+      final Dimension dimScreen = Toolkit.getDefaultToolkit().getScreenSize();
+      System.out.println("\nScreenSize: " + dimScreen);
+      final int nbrScreens = gdlist.length;
       Point pointOnScreen;
       
       final boolean canRun = true;
@@ -71,8 +75,12 @@ public class Wandering {
         
         pointOnScreen = MouseInfo.getPointerInfo().getLocation();
         pointOnScreen.setLocation(
-            pointOnScreen.x < dimScreen.width - 1 ? pointOnScreen.x + 1 : dimScreen.width - 2, 
-            pointOnScreen.y < dimScreen.height - 1 ? pointOnScreen.y + 1 : dimScreen.height - 2);
+            pointOnScreen.x < dimScreen.width * nbrScreens - 1 ? 
+                pointOnScreen.x + 1 : 
+                dimScreen.width * nbrScreens - 2, 
+            pointOnScreen.y < dimScreen.height * nbrScreens - 1 ? 
+                pointOnScreen.y + 1 : 
+                dimScreen.height * nbrScreens - 2);
         robot.mouseMove(pointOnScreen.x, pointOnScreen.y);       
         System.out.println(pointOnScreen);
         Thread.sleep(nSleep);
