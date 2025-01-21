@@ -1,3 +1,18 @@
+/**
+ * Java intro.
+ * 
+ * Classname: pt.intro.java.afirst.PlaneTest
+ * Copyright (C) 2024 RGV
+ * Email: ruivale at gmail dot com
+ *
+ * This is free software; you can redistribute it and/or modify it under the terms of the 
+ * GNU Lesser General Public License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU Lesser General Public License for more details.
+ */
 package pt.intro.java.afirst;
 
 /**
@@ -5,7 +20,7 @@ package pt.intro.java.afirst;
  * Description: a test case for the Plane class.
  * </p>
  *
- * @author rUI vALE - {rui dot vale at efacec dot com}
+ * @author rUI vALE - {ruivale at gmail dot com}
  */
 public class PlaneTest {
 

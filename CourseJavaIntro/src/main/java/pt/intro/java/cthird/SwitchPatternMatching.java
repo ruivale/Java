@@ -1,3 +1,18 @@
+/**
+ * Java intro.
+ * 
+ * Classname: pt.intro.java.cthird.SwitchPatternMatching
+ * Copyright (C) 2024 RGV
+ * Email: ruivale at gmail dot com
+ *
+ * This is free software; you can redistribute it and/or modify it under the terms of the 
+ * GNU Lesser General Public License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU Lesser General Public License for more details.
+ */
 package pt.intro.java.cthird;
 
 
@@ -37,7 +52,7 @@ package pt.intro.java.cthird;
  *
  * @author rUI vALE - {ruivale at gmail dot com}
  */
-public class SwitchPatternMathing {
+public class SwitchPatternMatching {
   
   /**
    * 
@@ -54,10 +69,10 @@ public class SwitchPatternMathing {
   }  
 
   public static void main(final String[] args){
-    System.out.println(SwitchPatternMathing.getTypeDescription("This is a String."));
-    System.out.println(SwitchPatternMathing.getTypeDescription(999));
-    System.out.println(SwitchPatternMathing.getTypeDescription(99.9));
-    System.out.println(SwitchPatternMathing.getTypeDescription(9999999999999l));
+    System.out.println(SwitchPatternMatching.getTypeDescription("This is a String."));
+    System.out.println(SwitchPatternMatching.getTypeDescription(999));
+    System.out.println(SwitchPatternMatching.getTypeDescription(99.9));
+    System.out.println(SwitchPatternMatching.getTypeDescription(9999999999999l));
   }
   
 }

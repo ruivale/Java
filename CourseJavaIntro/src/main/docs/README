@@ -7,7 +7,7 @@ Itens básicos de uma formação básica de Java
      O que é a programação?
      Visão geral do Java e das suas características (independência de plataforma (WORA), POO, etc.)
      Configurar o ambiente de desenvolvimento Java (JDK, IDEs como IntelliJ, Eclipse ou NetBeans)
-     Escrever, compilar e executar um programa Java
+     Escrever, compilar e executar um programa Java (o típico HelloWorld)
      Sintaxe básica e estrutura de um programa Java
 
     2. Variáveis, tipos de dados e operadores
