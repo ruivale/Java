@@ -32,11 +32,14 @@ package com.efacec.es.efarail.cctv;
 
 
 
-import com.efacec.es.trp.efarail.cctv.grpc.v1.Cctv;
-import com.efacec.es.trp.efarail.cctv.grpc.v1.Cctv.CctvVersion;
-import com.efacec.es.trp.efarail.cctv.grpc.v1.Cctv.ListCctvVersionsResponse;
-import com.efacec.es.trp.efarail.cctv.grpc.v1.Cctv.VersionsRequest;
-import com.efacec.es.trp.efarail.cctv.grpc.v1.OperationGrpc;
+
+import com.efacec.es.trp.efarail.cctv.grpc.enums.v1.CctvEnums.VersionMod;
+import com.efacec.es.trp.efarail.cctv.grpc.messages.Callers.v1.CctvMessagesCallers;
+import com.efacec.es.trp.efarail.cctv.grpc.messages.v1.CctvMessages.CctvVersion;
+import com.efacec.es.trp.efarail.cctv.grpc.messages.v1.CctvMessages.ListCctvVersionsResponse;
+import com.efacec.es.trp.efarail.cctv.grpc.messages.v1.CctvMessages.VersionsRequest;
+import com.efacec.es.trp.efarail.cctv.grpc.messages.v1.CctvMessages.WorkstationInformation;
+import com.efacec.es.trp.efarail.cctv.grpc.operation.v1.OperationGrpc;
 import com.google.protobuf.Int64Value;
 import com.google.protobuf.StringValue;
 import io.grpc.ManagedChannel;
@@ -79,6 +82,8 @@ public class CctvGRpcSimple {
   
   public static void main(String[] args) {
     
+//    CctvMessagesCallers.CallerRequest.newBuilder().getVersionsRequest().
+    
     System.out.println("\n\n\tRunning Cctv gRPC simple client...");
     
     final int nPort = 5555;
@@ -94,8 +99,8 @@ public class CctvGRpcSimple {
       final OperationGrpc.OperationBlockingStub operBlockStub = OperationGrpc.newBlockingStub(channel);
             
       // Creating the Workstation info...
-      final Cctv.WorkstationInformation ws = 
-          Cctv.WorkstationInformation.newBuilder()
+      final WorkstationInformation ws = 
+          WorkstationInformation.newBuilder()
               .setId(Int64Value.of(102))
               .setUserName(StringValue.of("inoss")).build();
       
@@ -103,7 +108,7 @@ public class CctvGRpcSimple {
       final VersionsRequest versionsRequest = 
           VersionsRequest.newBuilder()
               .setWorkstationInfo(ws)
-              .setVersionMod(Cctv.VersionMod.VERMOD_ALL).build();
+              .setVersionMod(VersionMod.VERMOD_ALL).build();
       
       
       final ListCctvVersionsResponse versionReply = operBlockStub.getVersions(versionsRequest);
@@ -116,8 +121,8 @@ public class CctvGRpcSimple {
       
       channel.shutdown();
       
-    } catch (Exception e) {
-      e.printStackTrace();
+    } catch (Exception exception) {
+      exception.printStackTrace();
     }
     
     System.out.println("\n\n");

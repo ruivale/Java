@@ -81,7 +81,7 @@ package pt.intro.java.afirst;
  *  Pilares POO ("Plain Old Object") em Java (aka POJO ("Plain Old Java Object")):
  *      - encapsulamento, i.e., uso de modificadores de acesso como private, protected, public;
  *      - herança, i.e., pelo uso da palavra chave "extends";
- *      - polimorfimso, i.e., pela sobrecarga ("overload") e sobrescrita ("override");
+ *      - polimorfismo, i.e., pela sobrecarga ("overload") e sobrescrita ("override");
  *      - abstracção, i.e., pelo uso de classes abstractas e interfaces.
  *      
  *  Excepções:
