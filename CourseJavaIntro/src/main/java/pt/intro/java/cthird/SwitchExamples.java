@@ -19,11 +19,11 @@ import java.util.Dictionary;
 
 
 /**
- * <p>
+ * <pre>
  * Description:
  * The switch in Java.
  * 
- * </p>
+ * </pre>
  *
  * @author rUI vALE - {ruivale at gmail dot com}
  */

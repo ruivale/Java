@@ -15,37 +15,36 @@
  */
 package pt.intro.java.jtenth;
 
-
+import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-
+import java.time.temporal.ChronoUnit;
 
 /**
- * <p>
+ * <pre>
  * Description:
- * A conversão ou análise de String para data e hora pode ser realizada através de um conjunto de métodos parse(). 
- * A conversão de data e hora para String pode ser realizada através dos métodos toString() ou format().
+ * Converting or parsing a String to date and time can be performed using a set of parse() methods.
+ * Converting date and time to String can be performed using the toString() or format() methods.
  * 
- * 
- * Letter Meaning Presentation Example
- *   y year year 1994; 94
- *   M month of year number/text 7; 07; Jul; July; J
- *   W week of month number 4
- *   E day of week text Tue; Tuesday; T
- *   d day of month number 15
- *   H hour of day number 22
- *   m minute of hour number 34
- *   s second of minute number 55
- *   S fraction of second number 345
- *   z time zone name zone-name Pacific Standard Time; PST
- *   Z zone offset zone-offset -0800
- *   V time zone id (JDK 8) zone-id America/Los_Angeles; Z; -08:30
+ *   Letter  Description           Presentation  Example
+ *   y       year                 year          1994; 94
+ *   M       month of year        number/text   7; 07; Jul; July; J
+ *   W       week of month        number        4
+ *   E       day of week          text          Tue; Tuesday; T
+ *   d       day of month         number        15
+ *   H       hour of day          number        22
+ *   m       minute of hour       number        34
+ *   s       second of minute     number        55
+ *   S       fraction of second   number        345
+ *   z       time zone name       zone-name     Pacific Standard Time; PST
+ *   Z       zone offset          zone-offset   -0800
+ *   V       time zone id (JDK 8) zone-id       America/Los_Angeles; Z; -08:30
  *
- * Some format pattern examples are available in the following table: 
- * Pattern                  Example
+ * Some available formatting patterns:
+ *   Pattern                    Example
  *   yyyy-MM-dd                 2019-02-24
  *   MM-dd-yyyy                 02-24-2019
  *   MMM-dd-yyyy                Feb-24-2019
@@ -58,78 +57,141 @@ import java.time.format.DateTimeFormatter;
  *   E MMM yyyy HH:mm:ss.SSSZ   Sun Feb 2019 11:46:32.393+0200
  *   yyyy-MM-dd HH:mm:ss VV     2019-02-24 11:45:41 Europe/Athens
  * 
- * </p>
+ * </pre>
  *
  * @author rUI vALE - {ruivale at gmail dot com}
  */
 public class DataTimeExample {
 
   /**
-   * Usar padrões definidos no sistema para criar DateTime.
+   * Use system-defined patterns to create DateTime.
    */
-  public static void fromStringToDateTime(){
-    System.out.println("\nfromStringToDatetime:");
+  private static void fromStringToDateTime() {
+    System.out.println("\nFrom a \"String\" to date and time:");
     
-    // Padrão: DateTimeFormatter.ISO_LOCAL_DATE, i.e., yyyy-MM-dd
-    final LocalDate localDate = LocalDate.parse("2020-06-01");
-    System.out.println("LocalDate: "+localDate);
+    // Pattern: DateTimeFormatter.ISO_LOCAL_DATE, i.e., yyyy-MM-dd
+    String strPattern = "2020-06-01";
+    final LocalDate localDate = LocalDate.parse(strPattern);
+    System.out.println("\tLocal date (Pattern: " + strPattern + "): " + localDate);
         
-    // Padrão: DateTimeFormatter.ISO_LOCAL_TIME, i.e., HH:mm ou HH:mm:ss
-    final LocalTime localTime = LocalTime.parse("12:23:44");
-    System.out.println("LocalTime: "+localTime);
+    // Pattern: DateTimeFormatter.ISO_LOCAL_TIME, i.e., HH:mm or HH:mm:ss
+    strPattern = "12:23:44";
+    final LocalTime localTime = LocalTime.parse(strPattern);
+    System.out.println("\tLocal time (Pattern: " + strPattern + "): " + localTime);
     
-    // Padrão: DateTimeFormatter.ISO_LOCAL_DATE_TIME, i.e., yyyy-MM-ddTHH:mm:ss
-    LocalDateTime localDateTime = LocalDateTime.parse("2020-06-01T11:20:15");
-    System.out.println("LocalDateTime: "+localDateTime);        
-    // Padrão: DateTimeFormatter.ISO_LOCAL_DATE_TIME, i.e., yyyy-MM-ddTHH:mm
-    localDateTime = LocalDateTime.parse("2020-06-01T11:20");
-    System.out.println("LocalDateTime: "+localDateTime);        
+    // Pattern: DateTimeFormatter.ISO_LOCAL_DATE_TIME, i.e., yyyy-MM-ddTHH:mm:ss
+    strPattern = "2020-06-01T11:20:15";
+    LocalDateTime localDateTime = LocalDateTime.parse(strPattern);
+    System.out.println("\tLocal date and time (Pattern: " + strPattern + "): " + localDateTime);        
+    // Pattern: DateTimeFormatter.ISO_LOCAL_DATE_TIME, i.e., yyyy-MM-ddTHH:mm
+    strPattern = "2020-06-01T11:20";
+    localDateTime = LocalDateTime.parse(strPattern);
+    System.out.println("\tLocal date and time (Pattern: " + strPattern + "): " + localDateTime);        
   }
   
-  
   /**
-   * Usar padrões nossos para criar DateTime.
+   * Use custom patterns to create DateTime.
    */
-  public static void fromUserPatternStringsToDateTime(){
-    System.out.println("\nfromUserPatternStringsToDateTime:");
+  private static void fromUserPatternStringsToDateTime() {
+    System.out.println("\nFrom a custom pattern to date and time:");
     
     String strDTPattern = "dd.MM.yyyy";
     String strDTValue = "01.06.2020";
     final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(strDTPattern);
     final LocalDate localDateFormatted = LocalDate.parse(strDTValue, dateFormatter);    
-    System.out.println("LocalDate (Value: "+strDTValue+", Pattern: "+strDTPattern+"): " + localDateFormatted);
+    System.out.println("\tLocal date (Value: " + strDTValue + ", Pattern: " + strDTPattern + "): " + localDateFormatted);
     
     strDTPattern = "HH|mm|ss";
     strDTValue = "12|23|44";
     final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern(strDTPattern);
     final LocalTime localTimeFormatted = LocalTime.parse(strDTValue, timeFormatter);
-    System.out.println("LocalTime (Value: "+strDTValue+", Pattern: "+strDTPattern+"): "+localTimeFormatted);
+    System.out.println("\tLocal time (Value: " + strDTValue + ", Pattern: " + strDTPattern + "): " + localTimeFormatted);
 
     strDTPattern = "dd.MM.yyyy, HH:mm:ss";
     strDTValue = "01.06.2020, 11:20:15";
     final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(strDTPattern);
     final LocalDateTime localDateTimeFormatted = LocalDateTime.parse(strDTValue, dateTimeFormatter);    
-    System.out.println("LocalDateTime (Value: "+strDTValue+", Pattern: "+strDTPattern+"): " + localDateTimeFormatted);
+    System.out.println("\tLocal date and time (Value: " + strDTValue + ", Pattern: " + strDTPattern + "): " + localDateTimeFormatted);
   }
-  
   
   /**
-   * Obter a data e a hora actuais.
+   * Get the current date and time.
    */
-  public static void getNow() {
-    System.out.println("\ngetNow:");
+  private static void getNow() {
+    System.out.println("\n\"Now\":");
     final LocalDate localDate = LocalDate.now();
     final LocalTime localTime = LocalTime.now();    
-    System.out.println("LocalDate: " + localDate+", LocalTime: "+localTime);
+    System.out.println("\tLocal date: " + localDate + ", Local time: " + localTime);
+  }
+
+  /**
+   * Returns a LocalDateTime using the two parameters received: LocalDate and LocalTime.
+   * 
+   * @param localDate the LocalDate to be used.
+   * @param localTime the LocalTime to be used.
+   * @return the LocalDateTime.
+   */
+  public static LocalDateTime of(LocalDate localDate, LocalTime localTime) {
+    return LocalDateTime.of(localDate, localTime);
+  }
+  
+  /**
+   * Get date and time from a LocalDate and LocalTime class.
+   */
+  private static void getDateTimeFromNow() {
+    System.out.println("\nGet date and time with \"Now\":");
+    final LocalDate localDate = LocalDate.now();
+    final LocalTime localTime = LocalTime.now();    
+    LocalDateTime localDateTime = DataTimeExample.of(localDate, localTime);
+    System.out.println("\tLocal date and time: " + localDateTime + ".");
+  }
+  
+  /**
+   * Using the "Instant" class
+   */
+  private static void instants() {
+    System.out.println("\nInstants:");
+    Instant timestamp = Instant.now();
+    System.out.println("\tNow: " + timestamp);
+    
+    Instant twoHoursLater = timestamp.plus(2, ChronoUnit.HOURS);
+    System.out.println("\tTwoHoursLater: " + twoHoursLater);
+    
+    Instant tenMinutesEarlier = timestamp.minus(10, ChronoUnit.MINUTES);
+    System.out.println("\tTenMinutesEarlier: " + tenMinutesEarlier);
+
+    final String strCharSeq = "2024-02-24T14:31:33.197021300Z";
+    Instant timestampFromString = Instant.parse(strCharSeq);
+    System.out.println("\t\"Now\" from a \"String\" (\"" + strCharSeq + "\"): " + timestamp);
+    
+    Instant timestampNow = Instant.now();
+    Instant timestampNowPlusTenSecs = timestampNow.plusSeconds(10);
+    System.out.println("\t\"Now\": " + timestampNow + " \"TenSecondsLater\": " + timestampNowPlusTenSecs);
+    boolean isAfter = timestampNow.isAfter(timestampNowPlusTenSecs); // false
+    System.out.println("\t\t\"Now\" is after \"TenSecondsLater\"? " + isAfter);
+    boolean isBefore = timestampNow.isBefore(timestampNowPlusTenSecs); // true    
+    System.out.println("\t\t\"Now\" is before \"TenSecondsLater\"? " + isBefore);    
+    long difference = timestampNow.until(timestampNowPlusTenSecs, ChronoUnit.SECONDS);
+    System.out.println("\t\tThe difference between \"Now\" and \"TenSecondsLater\" is " + difference + " seconds.");
+    
+    Instant startInstant = Instant.parse("2015-11-03T12:11:30.00Z");
+    Instant endInstant = Instant.parse("2016-12-06T15:17:10.00Z");
+    Duration durationBetweenInstant = Duration.between(startInstant, endInstant);    
+    System.out.println("\tThe duration between the instants " + startInstant + " and " + endInstant +
+        " is " + durationBetweenInstant.getSeconds() + " seconds.");
   }
 
 
-  public static void main(final String[] args){
-    System.out.println("\n\n\nDataTimeExample:\n");
+
+
+  public static void main(final String[] args) {
+    System.out.println("\n\n\nDate and time examples:\n");
     
     DataTimeExample.fromStringToDateTime();
     DataTimeExample.fromUserPatternStringsToDateTime();
     DataTimeExample.getNow();
+    DataTimeExample.getDateTimeFromNow();
+    DataTimeExample.instants();
     
     System.out.println("\n\n\n");
   }

@@ -19,7 +19,7 @@ import java.util.Scanner;
 
 
 /**
- * <p>
+ * <pre>
  * Description: 
  * Taking user input is a fundamental aspect of programming that allows applications to
  * interact with users. In Java, there are several ways to capture user input, but the most common
@@ -39,7 +39,7 @@ import java.util.Scanner;
  * effectively implement user input functionality in your Java programs. As you become more familiar
  * with Java, you'll find that capturing user input can significantly enhance interactivity and
  * usability in your applications.
- * </p>
+ * </pre>
  *
  * @author rUI vALE - {ruivale at gmail dot com}
  */

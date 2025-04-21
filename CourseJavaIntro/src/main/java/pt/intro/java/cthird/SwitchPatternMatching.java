@@ -17,7 +17,7 @@ package pt.intro.java.cthird;
 
 
 /**
- * <p>
+ * <pre>
  * Description: Java’s evolution continues to simplify common programming tasks, and one of the
  * latest and most exciting additions is Pattern Matching for Switch (JEP 406). Introduced in Java
  * 17, pattern matching extends the language’s expressiveness and readability, particularly when
@@ -27,10 +27,9 @@ package pt.intro.java.cthird;
  * applications.
  *
  * 1. What Is Pattern Matching for Switch? 
- * Pattern matching is a feature that allows developers to
- * perform more complex type checks and conditional logic in a simplified manner. In the context of
- * switch expressions, JEP 406 enables you to match patterns of values directly, reducing the need
- * for cumbersome type-casting and instanceof checks.
+ * Pattern matching is a feature that allows developers to perform more complex type checks and conditional
+ * logic in a simplified manner. In the context of switch expressions, JEP 406 enables you to match patterns
+ * of values directly, reducing the need for cumbersome type-casting and instanceof checks.
  *
  * In earlier versions of Java, switch was limited to comparing primitive types and enums, or using
  * the instanceof keyword for more complex types. This often led to repetitive and error-prone code.
@@ -48,7 +47,7 @@ package pt.intro.java.cthird;
  * the need for an explicit instanceof check. Null Safety: Pattern matching ensures that the types
  * are checked, avoiding NullPointerException and making your code more resilient. Enhanced
  * Readability: The syntax is cleaner because the type check and casting happen automatically.
- * </p>
+ * </pre>
  *
  * @author rUI vALE - {ruivale at gmail dot com}
  */
@@ -56,8 +55,8 @@ public class SwitchPatternMatching {
   
   /**
    * 
-   * @param obj
-   * @return 
+   * @param obj the object to be described.
+   * @return the description of the object type.
    */
   public static String getTypeDescription(Object obj) {
       return switch (obj) {
@@ -72,7 +71,7 @@ public class SwitchPatternMatching {
     System.out.println(SwitchPatternMatching.getTypeDescription("This is a String."));
     System.out.println(SwitchPatternMatching.getTypeDescription(999));
     System.out.println(SwitchPatternMatching.getTypeDescription(99.9));
-    System.out.println(SwitchPatternMatching.getTypeDescription(9999999999999l));
+    System.out.println(SwitchPatternMatching.getTypeDescription(9999999999999L));
   }
   
 }

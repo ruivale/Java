@@ -16,12 +16,12 @@
 package pt.intro.java.afirst;
 
 /**
- * <p>
+ * <pre>
  * Description: a simple POJO.
  *
  * Holds information associated with airplanes.
  *
- * </p>
+ * </pre>
  *
  * @author rUI vALE - {ruivale at gmail dot com}
  */
@@ -66,11 +66,10 @@ public class Plane {
    * @return String description
    */
   public String toString() {
-    return 
-        new StringBuffer(32)
-          .append(this.strMaker)
-          .append("/")
-          .append(strModel).append(" with ")
-          .append(this.nSeats).append(" seats").toString();
+    return
+            this.strMaker +
+                    "/" +
+                    strModel + " with " +
+                    this.nSeats + " seats";
   }
 }

@@ -17,7 +17,7 @@ package pt.intro.java.ininth;
 
 
 /**
- * <p>
+ * <pre>
  * Description: 
  * The notoriety of String and its wide range of applications means we should know it
  * in detail. Besides knowing how to declare and manipulate strings (for example, reverse, and
@@ -70,7 +70,7 @@ package pt.intro.java.ininth;
  *      The SCP is a small memory zone in comparison with others and can be filled pretty quickly. 
  *      Storing too many string literals in the SCP will lead to OutOfMemoryError.
  * 
- * </p>
+ * </pre>
  *
  * @author rUI vALE - {ruivale at gmail dot com}
  */

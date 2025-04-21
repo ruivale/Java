@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 
 
 /**
- * <p>
+ * <pre>
  * Description: 
  * 1. What is a Future? 
  * A Future is an interface representing a placeholder for a
@@ -63,7 +63,7 @@ import java.util.concurrent.TimeUnit;
  * CompletableFuture is an essential step towards building scalable and efficient applications.
  * Whether you’re chaining tasks, handling exceptions, or combining workflows, CompletableFuture
  * provides the tools to meet the demands of today’s reactive systems.
- * </p>
+ * </pre>
  *
  * @author rUI vALE - {ruivale at gmail dot com}
  */
@@ -71,16 +71,16 @@ public class CompletableFutureExample {
 
   
   /**
-   * Executes a Future and waits for it termination.
+   * Executes a Future and waits for its termination.
    * 
-   * @throws InterruptedException
-   * @throws ExecutionException 
+   * @throws InterruptedException the interrupted exception
+   * @throws ExecutionException the execution exception
    */
   private static void futureExample() throws InterruptedException, ExecutionException {
     
     System.out.println("\nfutureExample:");
     
-    ExecutorService executor = Executors.newSingleThreadExecutor();
+    ExecutorService executor = Executors.newSingleThreadExecutor(); // ignore warning
     
     Future<Integer> future = executor.submit(() -> {
       Thread.sleep(2000); // Simulating a long-running task
@@ -102,7 +102,7 @@ public class CompletableFutureExample {
     System.out.println("\ncompletableFutureExample:");
     
     CompletableFuture.supplyAsync(() -> {
-      try {Thread.sleep(2000);} catch (InterruptedException interruptedException) {}
+      try {Thread.sleep(2000);} catch (InterruptedException interruptedException) {} // ignore warning
       return 42; // Simulating a computation
       
     }).thenApply(result -> result * 2) // Transforming the result
@@ -111,7 +111,7 @@ public class CompletableFutureExample {
 
   
   /**
-   * run multiple tasks and combine their results seamlessly
+   * Run multiple tasks and combine their results seamlessly
    */
   private static void combiningMultipleFuturesExample() {
     System.out.println("\ncombiningMultipleFuturesExample:");
@@ -148,7 +148,7 @@ public class CompletableFutureExample {
     System.out.println("\ntimeoutHandlingExample:");
     
     CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() -> {
-      try {Thread.sleep(5000);} catch (InterruptedException interruptedException) {}
+      try {Thread.sleep(5000);} catch (InterruptedException interruptedException) {} // ignore warning
       return 42;
     });
     
@@ -168,7 +168,7 @@ public class CompletableFutureExample {
       CompletableFutureExample.futureExample();
 
     } catch (InterruptedException | ExecutionException interruptedException) {
-      interruptedException.printStackTrace();
+      interruptedException.printStackTrace(); // ignore warning
     }
 
     try {
@@ -189,7 +189,7 @@ public class CompletableFutureExample {
       System.out.println("... just called the timeoutHandlingExample.\n\n");
 
       System.out.println("\n\n\nPress any key to finish!");
-      System.in.read();
+      System.in.read(); // ignore warning
       
     } catch (Exception exception) {
       exception.printStackTrace();

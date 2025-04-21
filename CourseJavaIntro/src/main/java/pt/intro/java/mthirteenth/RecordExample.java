@@ -17,7 +17,7 @@ package pt.intro.java.mthirteenth;
 
 
 /**
- * <p>
+ * <pre>
  * Description: 
  * Record is a special purpose class in Java that is designed to provide an efficient
  * and easy way for programmers to carry aggregate data. Due to the introduction of this specific
@@ -40,7 +40,7 @@ package pt.intro.java.mthirteenth;
  *    - A record, however, can implement one or more interfaces. 
  *    - Any other fields, except the list of components, must be declared static.
  *
- * </p>
+ * </pre>
  *
  * @author rUI vALE - {ruivale at gmail dot com}
  */

@@ -19,16 +19,13 @@ import java.util.Objects;
 
 
 /**
- * <p>
+ * <pre>
  * Description:
- * </p>
+ * </pre>
  *
  * @author rUI vALE - {ruivale at gmail dot com}
  */
 public class Player implements Cloneable {
-
-  /* .. */
-  private static final long serialVersionUID = 0L;
 
   /* .. */
   private int memoizedHashCode = 0;
@@ -40,9 +37,10 @@ public class Player implements Cloneable {
   
   
   /**
+   * Creates a new Player instance with the given id and name.
    *
-   * @param id
-   * @param name
+   * @param id the Player identification
+   * @param name the Player name
    */
   public Player(int id, String name) {
     this.id = id;
@@ -50,20 +48,22 @@ public class Player implements Cloneable {
   }
   
   /**
-   * 
-   * @param player 
+   * Creates a new Player instance with the same state as the given Player.
+   *
+   * @param player the Player to copy from
    */
   public Player(Player player) {
     this.id = player.id;
     this.name = player.name;
+    this.memoizedHashCode = player.memoizedHashCode;
   }
 
   
   /**
    * Indicates whether some other object is "equal to" this one.
    * 
-   * @param obj
-   * @return 
+   * @param obj the reference object with which to compare
+   * @return the result of the comparison
    */
   @Override
   public boolean equals(Object obj) {
@@ -91,8 +91,10 @@ public class Player implements Cloneable {
 
   
   /**
+   * Returns a hash code value for the object. This method is supported for the benefit of hash
+   * tables such as those provided by HashMap.
    * 
-   * @return 
+   * @return the hash code
    */
   @Override
   public int hashCode() {
@@ -116,8 +118,8 @@ public class Player implements Cloneable {
    * Many consider clone and Cloneable broken in Java, largely because the rules for overriding 
    * clone are tricky and difficult to get right...
    * 
-   * @return
-   * @throws CloneNotSupportedException 
+   * @return a clone of this instance
+   * @throws CloneNotSupportedException if the object's class does not support the Cloneable interface.
    */
   @Override
   public Player clone() throws CloneNotSupportedException {

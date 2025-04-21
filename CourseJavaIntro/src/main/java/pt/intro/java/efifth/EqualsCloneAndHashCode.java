@@ -17,7 +17,7 @@ package pt.intro.java.efifth;
 
 
 /**
- * <p>
+ * <pre>
  * Description:
  * The equals() contract that imposes the following statements: 
  *    Reflexivity: An object is equal to itself, which means that p1.equals(p1) must return true. 
@@ -64,7 +64,7 @@ package pt.intro.java.efifth;
  *        MyClass (MyClass source) { //... } 
  *    }
  * 
- * </p>
+ * </pre>
  *
  * @author rUI vALE - {ruivale at gmail dot com}
  */

@@ -16,40 +16,59 @@
 package pt.intro.java.afirst;
 
 /**
- * <p>
+ * <pre>
  * Description: a simple Java class.
  *
- * Escrever, compilar e executar um programa Java
- *      Esta classe vai servir para uma primeira compilação e execução de um programa Java. O ficheiro
- *      tem a extensão ".java" e contém o método "main".
+ * Check for the Java version
+ *    In the Command Prompt or Terminal window, type the following command and press Enter:
+ *    >java -version
+ *
+ *
+ * Installing Java
+ *      The JDK 21, last LTS (Long Term Support) version, is available at:
+ *          Amazon Corretto:  <a href="https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/downloads-list.html">https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/downloads-list.html</a>
+ *          Oracle OpenJDK:   <a href="https://jdk.java.net/java-se-ri/21">https://jdk.java.net/java-se-ri/21</a>
+ *          Oracle JDK:       <a href="https://www.oracle.com/java/technologies/downloads/#java21">https://www.oracle.com/java/technologies/downloads/#java21</a>
+ *
+ *      The JDK 24, most recent release, is available at:
+ *          Amazon Corretto:  <a href="https://docs.aws.amazon.com/corretto/latest/corretto-24-ug/downloads-list.html">https://docs.aws.amazon.com/corretto/latest/corretto-24-ug/downloads-list.html</a>
+ *          Oracle OpenJDK:   <a href="https://jdk.java.net/java-se-ri/24">https://jdk.java.net/java-se-ri/24</a>
+ *          Oracle JDK:       <a href="https://www.oracle.com/java/technologies/downloads/#java24">https://www.oracle.com/java/technologies/downloads/#java24</a>
+ *
+ *      More sources:     <a href="https://javaalmanac.io/">https://javaalmanac.io/</a>
+ *
+ *
+ * Writing, compiling, and running a Java program
+ *      This class will serve as a first compilation and execution of a Java program. The file
+ *      has a ".java" extension and contains the "main" method.
  *      
- *      A sua compilação consiste em executar o comando "javac", disponível na pasta "bin" da instalação
- *      do JDK, indicando a classe pt.intro.java.afirst.HelloWorld como a classe a compilar. Este comando 
- *      traduzirá o ".java" para um ".class" que contém o "bytecode" da classe. Exemplo:
+ *      Compilation consists of executing the "javac" command, available in the "bin" folder of the
+ *      JDK installation, specifying the pt.intro.java.afirst.HelloWorld class as the one to compile.
+ *      This command will translate the ".java" file into a ".class" file containing the class's bytecode. Example:
  *       $javac src\main\java\pt\intro\java\afirst\HelloWorld.java
  *      
- *      A execução é em tudo semelhante à compilação mas o comando a usar é o "java" indicando a este que
- *      a classe inicial a executar é a pt.intro.java.afirst.HelloWorld. Exemplo:
+ *      Execution is very similar to compilation, but the command used is "java", specifying that
+ *      the initial class to execute is pt.intro.java.afirst.HelloWorld. Example:
  *       $java -cp src\main\java\ pt.intro.java.afirst.HelloWorld
- *      ou
+ *      or
  *       $ cd src\main\java\ 
  *       $java pt.intro.java.afirst.HelloWorld
  *
  * 
- * Sintaxe básica e estrutura de um programa Java
- *      O nosso programa Java básico HelloWorld segue a seguinte estrutura:
- *        - declaração de pacote (opcional): 
+ * Basic syntax and structure of a Java program  
+ *      Our basic HelloWorld Java program follows this structure:
+ *        - package declaration (optional): 
  *            package pt.intro.java.afirst;
- *        - importação de classes (opcional): 
- *            import nomeDoPacote.NomeDaClasse;
- *        - definição de classe: 
- *            public class HelloWorld{ ... }
- *        - método principal (ponto de entrada do programa): 
+ *        - import of classes (optional): 
+ *            import packageName.ClassName;
+ *        - class definition: 
+ *            public class HelloWorld { ... }
+ *        - main method (program entry point): 
  *            public static void main(String[] args) { ... }
- *        - instruções: 
- *            declaração de variáveis, chamadas de métodos, estruturas de controlo, etc.
+ *        - instructions: 
+ *            variable declarations, method calls, control structures, etc.
  * 
- *</p>
+ *</pre>
  *
  * @author rUI vALE - {ruivale at gmail dot com}
  */

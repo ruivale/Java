@@ -15,35 +15,32 @@
  */
 package pt.intro.java.afirst;
 
-
 /**
- * <p>
- * Description: 
- * Java é uma linguagem de programação de alto nível, orientada a objectos e multiplataforma.
- * Foi criada pela Sun Microsystems em 1995 mas actualmente pertence à Oracle. 
- * A linguagem é utilizada para desenvolvimento de aplicações empresariais, web, móveis (Android), 
- * entre outros.
+ * <pre>
+ * Description:  
+ * Java is a high-level, object-oriented, cross-platform programming language.
+ * It was created by Sun Microsystems in 1995 and currently belongs to Oracle.
+ * The language is used for developing enterprise, web, mobile (Android), and other types of applications.
  * 
- * Um dos principais lemas do Java é:
- *    - "Write Once, Run Anywhere" (WORA) – escreve uma vez, corre em qualquer lugar, graças à JVM
- *    Java Virtual Machine, que permite executar código Java em diferentes sistemas operativos sem 
- *    necessidade de recompilação. Para o efeito, basta que cada sistema operativo onde se pretende
- *    executar código Java tenha instalada a versão nativa da JVM.
+ * One of Java's main mottos is:
+ *    - "Write Once, Run Anywhere" (WORA) ? thanks to the JVM (Java Virtual Machine),
+ *      which allows Java code to run on different operating systems without needing recompilation.
+ *      For this to work, each operating system must have a native version of the JVM installed.
  * 
- * Características:
- *    - o código é compilado para "bytecode" que pode ser executado por qualquer JVM instalada;
- *    - segue os princípios de programação orientada a objectos, como encapsulamento, herança, polimorfismo e abstracção;
- *    - as variáveis devem ser declaradas com um tipo específico que não pode ser alterado durante a execução;
- *    - gestão automática de memória ("GC" ou "Garbage Collector") que trata da limpeza de objectos não utilizados;
- *    - vasta lista de bibliotecas e "frameworks" com várias finalidades tais como Swing/JavaFX, colecções, IO, etc;
- *    - multitarefas e concorrência permitindo a execução simultânea de múltiplas tarefas acedendo a objectos partilhados;
- *    - gestão de excepções a ausência de apontadores, como em C/C++, ajudam a evitar erros comuns;
- *    - vasta comunidade de suporte;
- *    - etc.
+ * Features:
+ *    - Code is compiled to bytecode, which can be executed on any installed JVM;
+ *    - Follows object-oriented programming principles like encapsulation, inheritance, polymorphism, and abstraction;
+ *    - Variables must be declared with a specific type and cannot be changed at runtime;
+ *    - Automatic memory management (Garbage Collector or GC) takes care of cleaning unused objects;
+ *    - Vast set of libraries and frameworks for multiple purposes such as Swing/JavaFX, collections, IO, etc.;
+ *    - Multithreading and concurrency support, allowing simultaneous execution of tasks that access shared objects;
+ *    - Exception handling and absence of pointers (like in C/C++) help prevent common programming errors;
+ *    - Large community support;
+ *    - And more.
  * 
- * Conceitos:
+ * Concepts:
  * 
- *  Classes e objectos;
+ *  Classes and Objects:
  *      class Plane {
  *         String strMaker;
  *         String strModel;
@@ -56,7 +53,7 @@ package pt.intro.java.afirst;
  *         }
  *      
  *         void takeOff() {
- *            System.out.println("The " + this.strMaker + "/" + this.strModel + ", with " +this.nPlaces+ " seats, is taking off...");
+ *            System.out.println("The " + this.strMaker + "/" + this.strModel + ", with " + this.nSeats + " seats, is taking off...");
  *         }
  *      }
  *      
@@ -78,65 +75,66 @@ package pt.intro.java.afirst;
  *         }
  *      }
  *      
- *  Pilares POO ("Plain Old Object") em Java (aka POJO ("Plain Old Java Object")):
- *      - encapsulamento, i.e., uso de modificadores de acesso como private, protected, public;
- *      - herança, i.e., pelo uso da palavra chave "extends";
- *      - polimorfismo, i.e., pela sobrecarga ("overload") e sobrescrita ("override");
- *      - abstracção, i.e., pelo uso de classes abstractas e interfaces.
+ *  OOP Pillars in Java (aka POJO - Plain Old Java Object):
+ *      - Encapsulation: using access modifiers like private, protected, and public;
+ *      - Inheritance: using the "extends" keyword;
+ *      - Polymorphism: through method overloading and overriding;
+ *      - Abstraction: using abstract classes and interfaces.
  *      
- *  Excepções:
+ *  Exceptions:
  *      try {
  *        int division = 10 / 0;
- *      } catch(ArithmeticException e) {
+ *      } catch (ArithmeticException e) {
  *        System.out.println("Exception: 10 divided by 0!");
  *      }
  * 
- *  Interfaces a classe abstractas:
- *      - permitem estabelecer contratos e funcionalidades comuns;
+ *  Interfaces and abstract classes:
+ *      - Allow for defining contracts and shared functionality;
  * 
- *  Coleções ("Collections Framework"):
- *      - fornece estruturas de dados como List, Set, Map, etc como p.e.:
- *        List<String> listaPlaneMakers = new ArrayList<>();
- *        listaPlaneMakers.add("Airbus");
- *        listaPlaneMakers.add("Boeing");
- *        listaPlaneMakers.add("Embraer");
- *        System.out.println(listaPlaneMakers);
+ *  Collections Framework:
+ *      - Provides data structures like List, Set, Map, etc., for example:
+ *        List&lt;String&gt; planeMakers = new ArrayList&lt;&gt;();
+ *        planeMakers.add("Airbus");
+ *        planeMakers.add("Boeing");
+ *        planeMakers.add("Embraer");
+ *        System.out.println(planeMakers);
  * 
- * Ambiente de exceução Java (JRE, JDK, JVM):
- *    - JVM ("Java Virtual Machine"), interpreta o "bytecode" e executa-o no sistema operativo.
- *    - JRE ("Java Runtime Environment"), é conposto pela JVM e bibliotecas  essenciais que permitem executar aplicações Java.
- *    - JDK ("Java Development Kit"), é composto pelo JRE e de ferramentas de desenvolvimento como p.e. o compilador "javac", etc.
+ * Java runtime environment (JRE, JDK, JVM):
+ *    - JVM (Java Virtual Machine): interprets bytecode and runs it on the OS.
+ *    - JRE (Java Runtime Environment): consists of the JVM and essential libraries to run Java apps.
+ *    - JDK (Java Development Kit): includes the JRE and development tools such as the "javac" compiler.
+ *
+ * Pros and cons of Java:
+ *  Pros:
+ *    - Portability;
+ *    - Strong community support;
+ *    - Mature development tools;
+ *    - Robust and secure code;
+ *  Cons:
+ *    - Slower performance compared to natively compiled languages like C/C++;
+ *    - Verbose syntax compared to, e.g., Python;
+ *    - JVM uses more memory than native programs;
  * 
- * Vantagens e desvantagens do Java:
- *  Vantagens:
- *    - portabilidade;
- *    - grande suporte da comunidade;
- *    - ferramentas de desenvolvimento maduras;
- *    - código robusto e seguro;
- *  Desvantagens:
- *    - performance inferior a linguagens nativamente compiladas, como p.e. o C/C++;
- *    - sintaxe verbosa em comparação com, p.e., Python;
- *    - a JVM consume mais memória do que programas nativos;
- * 
- * </p>
+ * </pre>
  *
  * @author rUI vALE - {ruivale at gmail dot com}
  */
 public class Intro {
 
- /**
-  * The Intro default constructor.
-  */
-  public Intro(){
+  /**
+   * The Intro default constructor.
+   */
+  public Intro() {
   }
 
- /**
-  * Returns this class description in a friendly way.
-  *
-  * @return String description
-  */
-  public String toString(){
-    return new StringBuffer("Intro").append("").toString();
+  /**
+   * Returns this class description in a friendly way.
+   *
+   * @return String description
+   */
+  @Override
+  public String toString() {
+    return "Intro";
   }
 
 }

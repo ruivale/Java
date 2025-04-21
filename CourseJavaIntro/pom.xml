@@ -6,8 +6,9 @@
     <version>0.0.1-alpha_build1</version>
     <packaging>jar</packaging>
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>23</maven.compiler.release>
+        <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>ISO-8859-1</project.reporting.outputEncoding>
+        <maven.compiler.release>24</maven.compiler.release>
         <exec.mainClass>pt.intro.java.CourseJavaInto</exec.mainClass>
     </properties>
     <name>CourseJavaIntro</name>
@@ -17,18 +18,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>3.11.0</version>
                 
                 <configuration>
                     <fork>true</fork>
-                    <source>23</source>
-                    <target>23</target>
-                    <compilerArgs>
-                        <arg>--enable-preview</arg>
-                        <arg>-Xlint:all</arg>
-                    </compilerArgs>
+                    <source>${maven.compiler.release}</source>
+                    <target>${maven.compiler.release}</target>
                     <!--for unmappable characters in classes-->
-                    <encoding>UTF-8</encoding>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
                 </configuration>                

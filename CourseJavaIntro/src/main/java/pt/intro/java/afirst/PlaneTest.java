@@ -16,9 +16,9 @@
 package pt.intro.java.afirst;
 
 /**
- * <p>
+ * <pre>
  * Description: a test case for the Plane class.
- * </p>
+ * </pre>
  *
  * @author rUI vALE - {ruivale at gmail dot com}
  */
