@@ -1,4 +1,5 @@
 /**
+ * <pre>
  * Java intro.
  * 
  * Classname: pt.intro.java.jtenth.DataTimeExample
@@ -12,6 +13,7 @@
  * This software is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU Lesser General Public License for more details.
+ * </pre>
  */
 package pt.intro.java.jtenth;
 
@@ -162,7 +164,7 @@ public class DataTimeExample {
 
     final String strCharSeq = "2024-02-24T14:31:33.197021300Z";
     Instant timestampFromString = Instant.parse(strCharSeq);
-    System.out.println("\t\"Now\" from a \"String\" (\"" + strCharSeq + "\"): " + timestamp);
+    System.out.println("\t\"Now\" from a \"String\" (\"" + strCharSeq + "\"): " + timestampFromString);
     
     Instant timestampNow = Instant.now();
     Instant timestampNowPlusTenSecs = timestampNow.plusSeconds(10);
