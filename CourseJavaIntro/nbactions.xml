@@ -15,6 +15,7 @@
                 <exec.appArgs>--enable-preview</exec.appArgs>
                 <exec.mainClass>${packageClassName}</exec.mainClass>
                 <exec.executable>java</exec.executable>
+                <Env.JAVA_HOME>C:\JDKs\x64\Corretto\jdk24.0.1_9</Env.JAVA_HOME>
             </properties>
         </action>
         <action>
@@ -33,6 +34,7 @@
                 <exec.mainClass>${packageClassName}</exec.mainClass>
                 <exec.executable>java</exec.executable>
                 <jpda.listen>true</jpda.listen>
+                <Env.JAVA_HOME>C:\JDKs\x64\Corretto\jdk24.0.1_9</Env.JAVA_HOME>
             </properties>
         </action>
         <action>

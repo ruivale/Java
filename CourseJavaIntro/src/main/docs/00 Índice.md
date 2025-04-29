@@ -360,72 +360,9 @@ java -version
 ---
 
 #### Escrever, compilar e executar um programa Java (o típico HelloWorld)
-Vamos criar a classe *HelloWorld*, pertencente ao *package pt.intro.java.afirst*. Esta classe servirá como um primeiro exemplo de compilação e execução de um programa Java.  
-A primeira criação, compilação e execução será manual, i.e., sem uso de IDEs e para isso vamos criar uma estrutura de pastas que nos permita gerir mais facilmente todo este processo.  
 
-Vamos criar uma pasta com o nome *HelloWorld*:
-```sh 
-$mkdir HelloWorld
-$cd HelloWorld
-```
-
-Vamos criar as pastas *src/pt/intro/java/afirst* e outra com o nome *classes*:
-```sh 
-$mkdir -p src/pt/intro/java/afirst
-$mkdir classes
-```
-
-
-Vamos de seguida criar o ficheiro *HelloWorld.java*, na pasta *src/pt/intro/java/afirst*. Este ficheiro, assim como qualquer ficheiro *java*, deve ter a extensão *.java*. Neste caso, como a classe deverá ser usada como classe executável, contém o método *main*:
-```java
-package pt.intro.java.afirst;
-
-public class HelloWorld {
-  public static void main(final String[] args){
-    System.out.println("Hello world!");
-  }
-}
-```
-
-A compilação consiste em executar o comando "javac", disponível na pasta "bin" da instalação do JDK, especificando a classe *pt.intro.java.afirst.HelloWorld* como aquela a compilar. Este comando irá traduzir o ficheiro *.java* para um ficheiro *.class* que contém o *bytecode* da classe.  
-Exemplo: 
-```sh 
- $javac -d classes src\pt\intro\java\afirst\HelloWorld.java  
-```
-
-A execução é muito semelhante à compilação, mas o comando a utilizar é o *java*, especificando que a classe inicial a executar é a *pt.intro.java.afirst.HelloWorld*.  
-Exemplo:  
-```sh
- $java -cp classes pt.intro.java.afirst.HelloWorld  
-```
-ou  
-```sh
- $cd classes  
- $java pt.intro.java.afirst.HelloWorld
-```
-
----
----
 #### Sintaxe básica e estrutura de um programa Java
-O nosso programa Java básico "HelloWorld" segue a seguinte estrutura:
-  - declaração de pacote (opcional):  
-      ```java
-      package pt.intro.java.afirst;
-      ```
-  - importação de classes (opcional e, neste exemplo, inexistente):  
-      ```java
-      import packageName.ClassName;
-      ```
-  - definição da classe:  
-      ```java
-      public class HelloWorld { ... }
-      ```
-  - método main (ponto de entrada do programa):  
-      ```java
-      public static void main(String[] args) { ... }
-      ```
-  - instruções:  
-      declarações de variáveis, chamadas de métodos, estruturas de controlo, etc.
+
      
      
      

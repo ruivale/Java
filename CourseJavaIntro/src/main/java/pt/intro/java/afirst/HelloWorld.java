@@ -38,6 +38,63 @@ package pt.intro.java.afirst;
  *      More sources:     <a href="https://javaalmanac.io/">https://javaalmanac.io/</a>
  *
  *
+ * Installing an Integrated Development Environment (IDE)
+ *    Netbeans:
+ *      - Download: <a href="https://netbeans.apache.org/front/main/download/">Netbeans</a>
+ *           Advantages:
+ *               Official IDE supported by Oracle (historically).
+ *               Good out-of-the-box support for Java SE, Java EE, and JavaFX.
+ *               Built-in support for Maven and Ant.
+ *               GUI Builder (Matisse) makes it easy to design UIs visually.
+ *               Lightweight compared to some others.
+ *
+ *           Disadvantages:
+ *               Slower development of new features compared to IntelliJ and VS Code.
+ *               UI can feel outdated.
+ *               Not as extensible or customizable as others.
+ *               Performance can degrade on large projects.
+ *
+ *    IntelliJ IDEA:
+ *      - Download: <a href="https://www.jetbrains.com/idea/download/">IntelliJ IDEA</a>
+ *           Advantages:
+ *               Excellent code completion, navigation, and refactoring tools.
+ *               Smart and context-aware code suggestions.
+ *               Strong integration with build tools (Maven, Gradle), version control, Docker, databases, etc.
+ *               Ultimate edition offers comprehensive enterprise, Spring, and web development support.
+ *
+ *           Disadvantages:
+ *               Ultimate edition is paid and quite expensive.
+ *               Can be heavy on system resources.
+ *               Steeper learning curve for beginners.
+ *
+ *    Visual Studio Code:
+ *      - Download: <a href="https://code.visualstudio.com/download">Visual Studio Code</a>
+ *           Advantages:
+ *               Lightweight and very fast to launch.
+ *               Highly customizable with extensions (Java support via extensions like "Extension Pack for Java").
+ *               Great for mixed-language projects (e.g., JavaScript + Java, or Java + Python).
+ *               Excellent Git integration and debugging tools.
+ *
+ *           Disadvantages:
+ *               Not a full-fledged IDE by default (relies on extensions for core Java features).
+ *               Refactoring and navigation not as powerful as IntelliJ or Eclipse.
+ *               Managing complex Java projects (especially enterprise) can be cumbersome.
+ *
+ *    Eclipse:
+ *      - Download: <a href="https://www.eclipse.org/downloads/packages/">Eclipse</a>
+ *           Advantages:
+ *               Mature and widely adopted in enterprise environments.
+ *               Very extensible with plugins.
+ *               Strong support for Java EE and other languages (via plugins).
+ *               Good integration with build tools and version control.
+ *
+ *           Disadvantages:
+ *               UI and UX are often criticized as outdated and unintuitive.
+ *               Plugin ecosystem can be overwhelming and inconsistent.
+ *               Memory-heavy and slower startup times.
+ *               Occasional instability or sluggish behavior in large projects.
+ *
+ *
  * Writing, compiling, and running a Java program
  *      This class will serve as a first compilation and execution of a Java program. The file
  *      has a ".java" extension and contains the "main" method.
