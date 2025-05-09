@@ -1,16 +1,14 @@
 
-### 📖 1. [Introdução à Programação e Java](#📖-introdução-à-programação-e-java)
-     O que é a programação?
-     Visão geral do Java e das suas características (independência de plataforma (WORA), POO, etc.)
-     Configurar o ambiente de desenvolvimento Java (JDK, IDEs como IntelliJ, Eclipse ou NetBeans)
-     Escrever, compilar e executar um programa Java (o típico HelloWorld)
-     Sintaxe básica e estrutura de um programa Java
+### 📖 1. Introdução à Programação e Java
+1. [O que é a programação?](#o-que-é-a-programação)
+2. [Visão geral do Java e das suas características (independência de plataforma (WORA), POO, etc.)](#visão-geral-do-java-e-das-suas-características-independência-de-plataforma-wora-poo-etc)
+3. [Configurar o ambiente de desenvolvimento Java (JDK, IDEs como IntelliJ, Eclipse ou NetBeans)](#configurar-o-ambiente-de-desenvolvimento-java-jdk-e-ides)
+4. [Escrever, compilar e executar um programa Java (o típico HelloWorld)](#escrever-compilar-e-executar-um-programa-java-o-típico-helloworld)
+5. [Sintaxe básica e estrutura de um programa Java](#sintaxe-básica-e-estrutura-de-um-programa-java)
 
 
-___
-___
-___
-
+---
+---
 ### 📖 **Introdução à Programação e Java**
 #### O que é a programação?
 
@@ -71,7 +69,7 @@ class Plane {
 
 public class Test {
    public static void main(String[] args) {
-     // criar aviões
+     // create planes...
      Plane planeAirbus350 = new Plane();
      planeAirbus350.strMaker = "Airbus";
      planeAirbus350.strModel = "350";
@@ -153,7 +151,6 @@ System.out.println(planeMakers);
 
 ---
 ---
-
 #### Configurar o ambiente de desenvolvimento Java (JDK e IDEs)
 
 ##### ✅ Verificar a versão do Java
@@ -303,10 +300,10 @@ ou
 ---
 #### Sintaxe básica e estrutura de um programa Java
 O nosso programa Java básico "HelloWorld" segue a seguinte estrutura:
-  - declaração de pacote (opcional):  
-      ```java
-      package pt.intro.java.afirst;
-      ```
+  - declaração de pacote (opcional):
+    ```java
+    package pt.intro.java.afirst;
+    ```
   - importação de classes (opcional e, neste exemplo, inexistente):  
       ```java
       import packageName.ClassName;

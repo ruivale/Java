@@ -124,8 +124,7 @@ public class Intro {
   /**
    * The Intro default constructor.
    */
-  public Intro() {
-  }
+  public Intro() {}
 
   /**
    * Returns this class description in a friendly way.

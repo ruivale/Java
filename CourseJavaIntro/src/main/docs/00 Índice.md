@@ -1,6 +1,8 @@
 
 # Formação básica Java (draft)
 
+Para melhor obsorver a seguinte formação, os formandos devem possuir conhecimentos básicos de programação em uma qualquer linguagem de programação declarativa e/ou orientada a objectos como por exemplo C, C++, C#, etc.
+
 
 <a href="file:///index.html">file://index.html  a href</a>  
 <a href="file:///./index.html">file://./index.html a href</a>  
@@ -23,7 +25,7 @@ ___
      Escrever, compilar e executar um programa Java (o típico HelloWorld)
      Sintaxe básica e estrutura de um programa Java
 
-### 📖 2. [Variáveis, tipos de dados e operadores]
+### 📖 2. [Variáveis, tipos de dados e operadores](...)
      Tipos de dados primitivos (int, double, char, boolean, etc.)
      Variáveis e constantes
      Conversão de tipos ("casting" e "promotion")
