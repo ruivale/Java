@@ -28,7 +28,7 @@
  * Email: mktransportes@efacec.com
  * </p>
  */
-package JDK22Examples;
+package jdk22examples;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

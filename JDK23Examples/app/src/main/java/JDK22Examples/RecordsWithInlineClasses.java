@@ -27,7 +27,7 @@
  * </p>
  */
 
-package JDK22Examples;
+package jdk22examples;
 
 
 import java.util.logging.Level;
