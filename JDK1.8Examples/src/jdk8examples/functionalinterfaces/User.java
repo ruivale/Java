@@ -27,7 +27,7 @@
  * </p>
  */
 
-package jdk8examples.method.reference;
+package jdk8examples.functionalinterfaces;
 
 
 import java.util.logging.Level;

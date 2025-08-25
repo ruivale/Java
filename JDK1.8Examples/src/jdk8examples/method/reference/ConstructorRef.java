@@ -6,9 +6,9 @@
  * <p>
  * Copyright: Copyright (c) 2014 Efacec Engenharia e Sistemas, S.A.
  * <br>
- * This software is the confidential and proprietary information of EFACEC Eng. Sistemas.
- * You shall not disclose such Confidential Information and shall use it only in
- * accordance with the terms of the license agreement you entered into EFACEC SE.
+ * This software is the confidential and proprietary information of EFACEC Eng. Sistemas. You shall
+ * not disclose such Confidential Information and shall use it only in accordance with the terms of
+ * the license agreement you entered into EFACEC SE.
  * </p>
  * <p>
  * Company: EFACEC Eng. Sistemas
@@ -30,7 +30,6 @@
  */
 package jdk8examples.method.reference;
 
-
 /**
  * <p>
  * Description:
@@ -51,24 +50,19 @@ public class ConstructorRef {
   }
 }
 
-
 class Emp {
 
   String name;
   Integer age;
 
-  Emp(String name,
-      Integer age)//parameterised constructor
-  {
+  Emp(String name, Integer age) { //parameterised constructor  
     this.name = name;
     this.age = age;
   }
 }
 
-
 @FunctionalInterface
 interface EmpProvider {
 
-  Emp getEmp(String name,
-             int age);
+  Emp getEmp(String name, int age);
 }
