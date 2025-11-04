@@ -32,6 +32,7 @@ package javafx.gui.tutorial;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
 
@@ -39,6 +40,7 @@ import javafx.scene.control.Slider;
 /**
  * <p>
  * Description:
+ * https://www.youtube.com/watch?v=Ld14MG-aPAI
  * </p>
  *
  * @author rUI vALE - {rui dot vale at efacec dot com}
@@ -53,6 +55,8 @@ public class BookRankingController {
   public Slider rankslider;
   @FXML
   public Button btnOk;
+  @FXML
+  public Label labelStatus;
   
   
   /**
@@ -61,6 +65,11 @@ public class BookRankingController {
    */
   public void clickok(final ActionEvent actionEvent) {
     System.out.println("Just saved...");
+    
+    labelStatus.setText(
+      "Rank: " + this.rankslider.getValue() + 
+        "book: " + bookslistview.getSelectionModel().getSelectedItems().get(0)
+    );
   }
 
  /**

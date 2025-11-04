@@ -41,6 +41,8 @@ import javafx.stage.Stage;
 /**
  * <p>
  * Description:
+ * https://www.youtube.com/watch?v=Ld14MG-aPAI
+ * 
  * </p>
  *
  * @author rUI vALE - {rui dot vale at efacec dot com}
@@ -64,7 +66,16 @@ public class Main extends Application{
     final FXMLLoader loader = new FXMLLoader(getClass().getResource("bookranking.fxml"));
     final Parent root = loader.load();
     primaryStage.setTitle("Ranking of books");
+    
     final BookRankingController controller = (BookRankingController)loader.getController();
+    controller.bookslistview.getItems().add("Gone with the wind");
+    controller.bookslistview.getItems().add("Sailing under water");
+    controller.bookslistview.getItems().add("Gladiator");        
+    controller.bookslistview.getItems().add("Jurassic park");
+    controller.bookslistview.getItems().add("How to plan tomatoes");
+    controller.bookslistview.getItems().add("How to plan cucumbers");
+
+        
     primaryStage.setScene(new Scene(root, 800, 600));
     primaryStage.show();
   }
