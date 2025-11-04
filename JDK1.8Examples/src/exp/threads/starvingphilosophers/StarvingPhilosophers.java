@@ -1,7 +1,6 @@
 package exp.threads.starvingphilosophers;
 
 //{{{  Starving_Philosophers.java
-
 //{{{  class Canteen {
 class Canteen {
   //{{{
@@ -59,7 +58,6 @@ class Canteen {
   //}}}
   //
   //}}}
-
   private int n_chickens = 0;
 
   //{{{  synchronized get (no chickens ==> wait)
@@ -67,19 +65,20 @@ class Canteen {
     //{{{
     while (n_chickens == 0) {
       //{{{  moan
-      System.out.println("(" + System.currentTimeMillis() + ") " +
-                         "Phil " + id + ": wot, no chickens?  I'll WAIT ... ");
+      System.out.println("(" + System.currentTimeMillis() + ") "
+        + "Phil " + id + ": wot, no chickens?  I'll WAIT ... ");
       //}}}
       //{{{  get on stand-by queue, letting in the next philosopher (or chef)
       try {
         wait();
-      } catch (InterruptedException e) {}
+      } catch (InterruptedException e) {
+      }
       //}}}
     }
     //{{{  thanks
-    System.out.println("(" + System.currentTimeMillis() + ") " +
-                       "Phil " + id +
-                       ": those chickens look good ... one please ...");
+    System.out.println("(" + System.currentTimeMillis() + ") "
+      + "Phil " + id
+      + ": those chickens look good ... one please ...");
     //}}}
     n_chickens--;
     return 1;
@@ -87,24 +86,24 @@ class Canteen {
   }
 
   //}}}
-
   //{{{  synchronized put (takes at least 3 seconds)
   public synchronized void put(int value) {
     //{{{
     //{{{  bring in the tray
-    System.out.println("(" + System.currentTimeMillis() + ") " +
-                       "Chef  : ouch ... make room ... this dish is very hot ... ");
+    System.out.println("(" + System.currentTimeMillis() + ") "
+      + "Chef  : ouch ... make room ... this dish is very hot ... ");
     //}}}
     //{{{  take 3 seconds to set down the dish (meanwhile a queue may be developing)
     try {
       Thread.sleep(3000);
-    } catch (InterruptedException e) {}
+    } catch (InterruptedException e) {
+    }
     //}}}
     n_chickens += value;
     //{{{  announce arrival of more chickens
-    System.out.println("(" + System.currentTimeMillis() + ") " +
-                       "Chef  : more chickens ... " +
-                       n_chickens + " now available ... NOTIFYING ...");
+    System.out.println("(" + System.currentTimeMillis() + ") "
+      + "Chef  : more chickens ... "
+      + n_chickens + " now available ... NOTIFYING ...");
     //}}}
     //{{{  put any waiting philosophers back on the main queue
     notifyAll();
@@ -113,15 +112,13 @@ class Canteen {
   }
 
   //}}}
-
   //}}}
 }
 
 //}}}
-
 //{{{  class Chef extends Thread {
 class Chef
-    extends Thread {
+  extends Thread {
   //{{{
 
   //{{{  COMMENT documentation
@@ -132,7 +129,6 @@ class Chef
   //This cycle continues indefinitely.
   //
   //}}}
-
   private Canteen canteen;
 
   //{{{  constructor
@@ -142,29 +138,29 @@ class Chef
   }
 
   //}}}
-
   //{{{  run
   public void run() {
     //{{{
     int n_chickens;
 
     //{{{  starting
-    System.out.println("(" + System.currentTimeMillis() + ")" +
-                       " Chef  : starting ... ");
+    System.out.println("(" + System.currentTimeMillis() + ")"
+      + " Chef  : starting ... ");
     //}}}
     while (true) {
       //{{{  cook 4 chickens
-      System.out.println("(" + System.currentTimeMillis() + ")" +
-                         " Chef  : cooking ... ");
+      System.out.println("(" + System.currentTimeMillis() + ")"
+        + " Chef  : cooking ... ");
       //{{{  cook for around 2 seconds
       try {
         sleep(2000);
-      } catch (InterruptedException e) {}
+      } catch (InterruptedException e) {
+      }
       //}}}
       n_chickens = 4;
-      System.out.println("(" + System.currentTimeMillis() + ")" +
-                         " Chef  : " + n_chickens +
-                         " chickens, ready-to-go ... ");
+      System.out.println("(" + System.currentTimeMillis() + ")"
+        + " Chef  : " + n_chickens
+        + " chickens, ready-to-go ... ");
       //}}}
       canteen.put(n_chickens);
     }
@@ -172,15 +168,13 @@ class Chef
   }
 
   //}}}
-
   //}}}
 }
 
 //}}}
-
 //{{{  class Phil extends Thread {
 class Phil
-    extends Thread {
+  extends Thread {
   //{{{
 
   //{{{  COMMENT documentation
@@ -193,7 +187,6 @@ class Phil
   //going to the canteen.  He will get his come-uppance shortly.
   //
   //}}}
-
   private int id;
   private Canteen canteen;
 
@@ -205,15 +198,14 @@ class Phil
   }
 
   //}}}
-
   //{{{  run
   public void run() {
     //{{{
     int chicken;
 
     //{{{  starting
-    System.out.println("(" + System.currentTimeMillis() + ")" +
-                       " Phil " + id + ": starting ... ");
+    System.out.println("(" + System.currentTimeMillis() + ")"
+      + " Phil " + id + ": starting ... ");
     //}}}
     while (true) {
       //{{{  everyone, bar philosopher 0, has a little think
@@ -221,30 +213,29 @@ class Phil
         //{{{  think for around 3 seconds
         try {
           sleep(3000);
-        } catch (InterruptedException e) {}
+        } catch (InterruptedException e) {
+        }
         //}}}
       }
       //}}}
       //{{{  want chicken
-      System.out.println("(" + System.currentTimeMillis() + ")" +
-                         " Phil " + id + ": gotta eat ... ");
+      System.out.println("(" + System.currentTimeMillis() + ")"
+        + " Phil " + id + ": gotta eat ... ");
       //}}}
       chicken = canteen.get(id);
       //{{{  consume chicken
-      System.out.println("(" + System.currentTimeMillis() + ")" +
-                         " Phil " + id + ": mmm ... that's good ... ");
+      System.out.println("(" + System.currentTimeMillis() + ")"
+        + " Phil " + id + ": mmm ... that's good ... ");
       //}}}
     }
     //}}}
   }
 
   //}}}
-
   //}}}
 }
 
 //}}}
-
 //{{{  class College {
 class College {
   //{{{
@@ -263,7 +254,6 @@ class College {
   //never even gets one meal, despite being in the Canteen the whole time!
   //
   //}}}
-
   //{{{  main
   public static void main(String argv[]) {
     //{{{
@@ -284,7 +274,6 @@ class College {
   }
 
   //}}}
-
   //}}}
 }
 

@@ -180,3 +180,6 @@ JavaFX/Griffon/Examples/GriffonExamples/GriffonExample/.gradle/buildOutputCleanu
 JavaFX/Griffon/Examples/GriffonExamples/GriffonExample/.gradle/buildOutputCleanup/cache.properties
 JavaFX/Griffon/Examples/GriffonExamples/GriffonExample/.gradle/nb-cache/trust/A3D9C67AC4D9D9ED46E034C37105D3B8BDD740D5AC65325B975CC1B7405D16F3
 JavaFX/ImageApp/.gradle/nb-cache/trust/F52079E95A8A49ADC173C858E8456E91AC77AC44FC0354C6559A10287F90C926
+/JavaFX/scenebuilder_kit_samples/SceneBuilderHello/build/
+/JavaFX/scenebuilder_kit_samples/SceneBuilderHello/dist/
+/JavaFX/scenebuilder_kit_samples/SceneBuilderHelloSW/build/

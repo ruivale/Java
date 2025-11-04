@@ -1,6 +1,6 @@
 /**
  * <p>
- * Classname:  exp.robot.RobotMouseMoving
+ * Classname: exp.Wandering
  * </p>
  *
  * <p>Copyright: Copyright (c) 2021 EFACEC SE

@@ -77,15 +77,9 @@ public class ReentrantLockTests {
     return processed;
   }
 
-  /**
-   * Returns this class description in a friendly way.
-   *
-   * @return String description
-   */
-  public String toString() {
-    return new StringBuffer("ReentrantLockTests").append("").toString();
-  }
-
+  
+  
+  
   public static void main(final String[] args) throws Exception {
     final ReentrantLockTests clazz = new ReentrantLockTests();
 

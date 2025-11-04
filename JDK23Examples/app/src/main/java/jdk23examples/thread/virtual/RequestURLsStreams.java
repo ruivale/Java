@@ -30,7 +30,6 @@
  */
 package jdk23examples.thread.virtual;
 
-import com.sun.net.httpserver.Request;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
