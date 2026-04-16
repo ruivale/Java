@@ -30,8 +30,8 @@
  */
 package jdk24examples.structuredconcurrency;
 
+
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import java.util.concurrent.StructuredTaskScope;
 
 /**
@@ -45,51 +45,51 @@ import java.util.concurrent.StructuredTaskScope;
  */
 public class StructuredConcurrency {
 
-
-  public static void main(final String[] args) {
-    try {      
-      Response response = new StructuredConcurrency().getResponse();      
-      
-      System.out.println("Response: user: "+response.u + " order: "+response.o);
-      
-    } catch (InterruptedException | ExecutionException exc) {
-      exc.printStackTrace();
-    }
-  }
-  
-  
-  private Response getResponse() throws InterruptedException, ExecutionException {
-    try (var scope = new StructuredTaskScope.ShutdownOnFailure()) {
-      StructuredTaskScope.Subtask<String> u = scope.fork(() -> getUser());
-      StructuredTaskScope.Subtask<String> o = scope.fork(() -> getOrder());
-      
-      scope.join();      
-      scope.throwIfFailed();
-      
-      return new Response(u.get(), o.get());
-    }    
-  }
-
-  private String getUser(){
-    try {Thread.sleep(3500);} catch (InterruptedException interruptedException) {}
-    
-    return "User";
-  }
-  
-  private String getOrder(){
-    try {Thread.sleep(5000);} catch (InterruptedException interruptedException) {}
-    
-    return "Order";
-  }
-
-  
-  class Response {
-    String u;
-    String o;
-    
-    Response(String u, String o){
-      this.u = u;
-      this.o = o;
-    }
-  }
+//
+//  public static void main(final String[] args) {
+//    try {      
+//      Response response = new StructuredConcurrency().getResponse();      
+//      
+//      System.out.println("Response: user: "+response.u + " order: "+response.o);
+//      
+//    } catch (InterruptedException | ExecutionException exc) {
+//      exc.printStackTrace();
+//    }
+//  }
+//  
+//  
+//  private Response getResponse() throws InterruptedException, ExecutionException {
+//    try (var scope = new StructuredTaskScope.ShutdownOnFailure()) {
+//      StructuredTaskScope.Subtask<String> u = scope.fork(() -> getUser());
+//      StructuredTaskScope.Subtask<String> o = scope.fork(() -> getOrder());
+//      
+//      scope.join();      
+//      scope.throwIfFailed();
+//      
+//      return new Response(u.get(), o.get());
+//    }    
+//  }
+//
+//  private String getUser(){
+//    try {Thread.sleep(3500);} catch (InterruptedException interruptedException) {}
+//    
+//    return "User";
+//  }
+//  
+//  private String getOrder(){
+//    try {Thread.sleep(5000);} catch (InterruptedException interruptedException) {}
+//    
+//    return "Order";
+//  }
+//
+//  
+//  class Response {
+//    String u;
+//    String o;
+//    
+//    Response(String u, String o){
+//      this.u = u;
+//      this.o = o;
+//    }
+//  }
 }

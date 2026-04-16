@@ -22,7 +22,18 @@
     </build>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>24</maven.compiler.release>
+        <maven.compiler.release>25</maven.compiler.release>
         <exec.mainClass>jdk24examples.JDK24Examples</exec.mainClass>
     </properties>
+    
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.cache</groupId>
+            <artifactId>cache-api</artifactId>
+            <version>1.1.1</version>
+            <scope>compile</scope>
+        </dependency>    
+    </dependencies>
+    
 </project>
